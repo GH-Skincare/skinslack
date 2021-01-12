@@ -1,3 +1,5 @@
+//get google id this afternoon Jan 12-completed task
+
 const passport = require('passport')
 const router = require('express').Router()
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
