@@ -10,4 +10,6 @@ const Cart = db.define('cart', {
   //   },
 })
 
+//is active or not active boolean would rep an active order is a cart
+
 module.exports = Cart
