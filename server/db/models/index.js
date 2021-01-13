@@ -31,7 +31,9 @@ const UserProduct = db.define('UserProduct', {
 
 User.belongsToMany(Product, {through: UserProduct})
 Product.belongsToMany(User, {through: UserProduct})
+//**what do we need to do for the cart items  */
 
 module.exports = {
   User
 }
+//**add the appropriate model names to export */
