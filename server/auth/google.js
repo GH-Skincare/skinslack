@@ -1,4 +1,4 @@
-//get google id this afternoon Jan 12
+//get google id this afternoon Jan 12-completed task
 
 const passport = require('passport')
 const router = require('express').Router()
