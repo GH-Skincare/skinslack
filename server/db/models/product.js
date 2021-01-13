@@ -19,9 +19,6 @@ const Product = db.define('product', {
     type: Sequelize.DECIMAL,
     allowNull: false
   },
-  type: {
-    type: Sequelize.TEXT
-  },
   stock: {
     type: Sequelize.INTEGER,
     allowNull: false
