@@ -7,7 +7,7 @@ const Product = db.define('product', {
     allowNull: false
   },
   summary: {
-    type: Sequelize.TEXT('tiny')
+    type: Sequelize.TEXT
   },
   description: {
     type: Sequelize.TEXT
