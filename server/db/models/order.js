@@ -1,14 +1,12 @@
-//order model-created associations with team
-
 const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Order = db.define('order', {
-  validate: {
-    isActive: {
-      //true or false
-    }
-  },
+  // validate: {
+  //   isActive: {
+  //     //true or false
+  //   },
+  // },
   quantity: {
     type: Sequelize.INTEGER,
     allowNull: false,
