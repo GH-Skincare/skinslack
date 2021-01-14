@@ -9,6 +9,7 @@ class AllProducts extends React.Component {
     return (
       <div>
         <h1>ALL PRODUCTS</h1>
+        <h1> This is where all of your fab products will live</h1>
       </div>
     )
   }
