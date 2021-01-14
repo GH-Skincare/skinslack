@@ -2,6 +2,7 @@ const User = require('./user')
 const Product = require('./product')
 const Sequelize = require('sequelize')
 const db = require('./database')
+const Order = require('./order')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -25,15 +26,20 @@ const db = require('./database')
 //many users can belong to many products
 //one user can belong to many products
 //  **** let's talk associations!!! ***
-const UserProduct = db.define('UserProduct', {
+const OrderItem = db.define('OrderItem', {
   role: Sequelize.STRING
 })
 
-User.belongsToMany(Product, {through: UserProduct})
-Product.belongsToMany(User, {through: UserProduct})
+Order.hasMany(User)
+User.belongsTo(Order)
+Order.belongsToMany(Product, {through: OrderItem})
+Product.belongsToMany(User, {through: OrderItem})
+
 //**what do we need to do for the cart items  */
 
 module.exports = {
-  User
+  User,
+  Product,
+  Order
 }
 //**add the appropriate model names to export */
