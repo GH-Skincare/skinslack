@@ -1,4 +1,4 @@
-//order model
+//order model-created associations with team
 
 const Sequelize = require('sequelize')
 const db = require('../db')
