@@ -3,8 +3,8 @@ import React from 'react'
 //import redux thunk here
 
 export class singleProduct extends React.Component {
-  // constructor(){
-  //   super()
+  // constructor(props){
+  //   super(props)
   // }
 
   render() {
