@@ -9,10 +9,10 @@ export const setProducts = products => ({
 
 export const fetchProducts = () => async dispatch => {
   try {
-    const {data} = await axios.get('/api/products')
+    const {data} = await axios.get('/api/allproducts')
     dispatch(setProducts(data))
   } catch (error) {
-    console.error(`Error fetching products from our API :()`)
+    console.error(`Error fetching products from our API :(`)
   }
 }
 
