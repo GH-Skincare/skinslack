@@ -9,6 +9,10 @@ class AllProducts extends React.Component {
     return (
       <div>
         <h1>ALL PRODUCTS</h1>
+        {this.props.products.map(product => (
+          <div key={product.id}> {product.name} </div>
+        ))}
+        ;
       </div>
     )
   }
