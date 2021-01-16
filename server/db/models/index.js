@@ -3,18 +3,23 @@ const Product = require('./product')
 const Sequelize = require('sequelize')
 const db = require('../db')
 const Order = require('./order')
+const OrderItem = require('./orderItem')
 
-const OrderItem = db.define('OrderItem', {
-  role: Sequelize.STRING
-})
+// const OrderItem = db.define('OrderItem', {
+//   role: Sequelize.STRING,
+// })
 
-Order.hasMany(User)
-User.belongsTo(Order)
-Order.belongsToMany(Product, {through: OrderItem})
-Product.belongsToMany(User, {through: OrderItem})
+User.hasMany(Order)
+Order.belongsTo(User)
+
+Order.hasMany(OrderItem)
+OrderItem.belongsTo(Order)
+
+OrderItem.belongsTo(Product)
 
 module.exports = {
   User,
   Product,
-  Order
+  Order,
+  OrderItem
 }
