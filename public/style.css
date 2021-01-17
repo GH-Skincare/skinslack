@@ -48,6 +48,7 @@ form div {
 }
 
 .nav-links {
+  cursor: pointer;
   color: #e6cccc;
   border: 1px solid;
   padding: 5px;
@@ -71,14 +72,14 @@ form div {
 
 /* Login view */
 .login-button {
-  color: white;
+  color: #ffffff;
   background-color: #b96f6f;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 
 .login-button:hover {
   color: #b96f6f;
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid #b96f6f;
 }
 
@@ -130,5 +131,32 @@ form div {
 .product-stats {
   padding-top: 15px;
   font-size: 20px;
+}
+
+/* specific styling for each product category */
+
+.product-name {
+  font-size: 32px;
   font-weight: bold;
+}
+
+.product-summary {
+  font-size: 18px;
+  font-style: normal;
+}
+.product-price {
+  font-size: 32px;
+}
+
+.add-cart {
+  cursor: pointer;
+  color: #b96f6f;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.add-cart:hover {
+  color: #ffffff;
+  background-color: #b96f6f;
+  border: 1px solid #ffffff;
 }
