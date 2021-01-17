@@ -499,7 +499,7 @@ var UserHome = function UserHome(props) {
   var email = props.email;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "welcome-user-email"
-  }, "Welcome, ", email, "!"));
+  }, "Welcome, ", email, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "NOTE TO TEAM: I think it would be nice to have all products also showing on the main sign in page? Or do we want the customer to sign in and simply see their account settings here?", ' '));
 };
 /**
  * CONTAINER

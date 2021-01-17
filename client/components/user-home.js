@@ -11,6 +11,11 @@ export const UserHome = props => {
   return (
     <div>
       <h3 className="welcome-user-email">Welcome, {email}!</h3>
+      <h1>
+        NOTE TO TEAM: I think it would be nice to have all products also showing
+        on the main sign in page? Or do we want the customer to sign in and
+        simply see their account settings here?{' '}
+      </h1>
     </div>
   )
 }
