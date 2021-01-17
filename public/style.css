@@ -37,8 +37,18 @@ form div {
 }
 
 /* nav bar links */
+
+.nav-bar {
+  background-color: #b96f6f;
+}
+
+.brand-name {
+  font-size: 25px;
+  padding: 0;
+}
+
 .nav-links {
-  color: #b96f6f;
+  color: #e6cccc;
   border: 1px solid;
   padding: 5px;
   border-radius: 2px;
@@ -74,19 +84,22 @@ form div {
 
 .all-products-list-container ul {
   padding: 0;
+  padding-left: 10px;
   margin: 0px;
   list-style-type: none;
 }
 
 .all-products-list-container ul li {
-  width: 250px;
-  height: 300px;
+  width: 350px;
+  height: 400px;
   background-color: #e6cccc;
   float: left;
   margin: 30px;
+  padding: 5px;
+  word-wrap: break-word;
 }
 
-.product-name {
+.product-stats {
   padding-top: 15px;
   font-size: 20px;
   font-weight: bold;

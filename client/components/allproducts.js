@@ -19,7 +19,11 @@ class AllProducts extends React.Component {
           <ul>
             {this.props.products.map(product => (
               <div className="all-products" key={product.id}>
-                <li className="product-name">{product.name}</li>
+                <li className="product-stats">
+                  <p>{product.name}</p>
+                  <p>{product.summary}</p>
+                  <p>{product.price}</p>
+                </li>
               </div>
             ))}
           </ul>

@@ -174,8 +174,8 @@ function (_React$Component) {
           className: "all-products",
           key: product.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "product-name"
-        }, product.name));
+          className: "product-stats"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.summary), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.price)));
       }))));
     }
   }]);
@@ -361,12 +361,13 @@ var Navigationbar = function Navigationbar(_ref) {
   var handleClick = _ref.handleClick,
       isLoggedIn = _ref.isLoggedIn;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Navbar"], {
+    className: "nav-bar",
     collapseOnSelect: true,
     expand: "lg",
-    bg: "dark",
     variant: "dark"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Navbar"].Brand, {
-    href: "#home"
+    className: "brand-name",
+    href: "/home"
   }, "JIL SkinCare"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Navbar"].Toggle, {
     "aria-controls": "responsive-navbar-nav"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Navbar"].Collapse, {
@@ -374,7 +375,7 @@ var Navigationbar = function Navigationbar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Nav"], {
     className: "mr-auto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Nav"].Link, {
-    href: "#AllProducts"
+    href: "/allproducts"
   }, "All Products")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Nav"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "/home",
     className: "nav-links"
@@ -389,37 +390,7 @@ var Navigationbar = function Navigationbar(_ref) {
     to: "/signup",
     className: "nav-links"
   }, "Sign Up")))))));
-}; // const Navbar = ({handleClick, isLoggedIn}) => (
-//   <div>
-//     <h1 className="title">JIL SkinCare</h1>
-//     <h1 className="title-headline">Skincare That Lasts...</h1>
-//     <nav>
-//       {isLoggedIn ? (
-//         <div>
-//           {/* The navbar will show these links after you log in */}
-//           <Link to="/home" className="nav-links">
-//             Home
-//           </Link>
-//           <a href="#" onClick={handleClick} className="nav-links">
-//             Logout
-//           </a>
-//         </div>
-//       ) : (
-//         <div>
-//           {/* The navbar will show these links before you log in */}
-//           <Link to="/login" className="nav-links">
-//             Login
-//           </Link>
-//           <Link to="/signup" className="nav-links">
-//             Sign Up
-//           </Link>
-//         </div>
-//       )}
-//     </nav>
-//     <hr />
-//   </div>
-// )
-
+};
 /**
  * CONTAINER
  */
