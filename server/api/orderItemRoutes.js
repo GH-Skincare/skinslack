@@ -1,15 +1,20 @@
 const orderItemsRouter = require('express').Router()
 const {OrderItem, Order} = require('../db/models')
 
-orderItemsRouter.get('/products/:productId', async function(req, res, next) {
+orderItemsRouter.get('/products/:productId/users/:userId', async function(
+  req,
+  res,
+  next
+) {
   try {
-    const order = Order.findOne({
-      where: {isActive: true, userId: req.body.userId}
+    const order = await Order.findOne({
+      where: {isActive: true, userId: req.params.userId}
     })
     if (order === null) {
       res.send({})
       return
     }
+
     const orderItem = await OrderItem.findOne({
       where: {productId: req.params.productId, orderId: order.id}
     })
@@ -28,6 +33,7 @@ orderItemsRouter.post('/', async function(req, res, next) {
     const order = Order.findOrCreate({
       where: {isActive: true, userId: req.body.userId}
     })
+
     const newItem = await OrderItem.create({
       orderId: order.id,
       productId: req.body.productId,

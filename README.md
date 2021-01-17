@@ -1,3 +1,19 @@
+# API Routes
+
+Google: curl (type of request here) request
+
+//to create or find a new orderItem
+curl -d "userId=1&quantity=1&productId=1" -X PUT http://localhost:8080/api/order_items
+
+//update number of orderItems
+curl -d "quantity=8" -X PUT http://localhost:8080/api/order_items/8
+
+//delete an Order item
+curl -X "DELETE" http://localhost:8080/api/order_items/8
+
+//Get an orderItem
+curl http://localhost:8080/api/order_items/products/1/users/1
+
 # Boilermaker
 
 _Good things come in pairs_
