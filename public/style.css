@@ -1,5 +1,7 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  background-color: #f3e7e7;
 }
 
 a {
@@ -18,4 +20,26 @@ nav a {
 form div {
   margin: 1em;
   display: inline-block;
+}
+
+/* nav bar */
+.title {
+  color: #b96f6f;
+  font-size: 32px;
+  text-align: center;
+}
+
+.title-headline {
+  color: #c48484;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* nav bar links */
+.nav-links,
+a {
+  color: #b96f6f;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 2px;
 }
