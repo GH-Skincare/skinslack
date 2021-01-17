@@ -3,7 +3,7 @@
 Google: curl (type of request here) request
 
 //to create or find a new orderItem
-curl -d "userId=1&quantity=1&productId=1" -X PUT http://localhost:8080/api/order_items
+curl -d "userId=1&quantity=1&productId=1" -X POST http://localhost:8080/api/order_items
 
 //update number of orderItems
 curl -d "quantity=8" -X PUT http://localhost:8080/api/order_items/8
@@ -12,7 +12,9 @@ curl -d "quantity=8" -X PUT http://localhost:8080/api/order_items/8
 curl -X "DELETE" http://localhost:8080/api/order_items/8
 
 //Get an orderItem
-curl http://localhost:8080/api/order_items/products/1/users/1
+curl http://localhost:8080/api/orders/products/1/users/1
+//for order routes
+curl http://localhost:8080/api/orders/users/1
 
 # Boilermaker
 
