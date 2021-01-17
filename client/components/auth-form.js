@@ -33,6 +33,7 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
+      {/* <img src={intro} alt="welcome-image" /> */}
       {/* may be able to add a nice intro video-ad here if we have time by using code below */}
       {/* <div className="embed-responsive embed-responsive-16by9">
           <iframe className="embed-responsive-item" src=""></iframe>
