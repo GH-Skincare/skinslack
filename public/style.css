@@ -69,6 +69,34 @@ form div {
   font-style: italic;
 }
 
+/* Login view */
+.login-button {
+  color: white;
+  background-color: #b96f6f;
+  border: 1px solid white;
+}
+
+.login-button:hover {
+  color: #b96f6f;
+  background-color: white;
+  border: 1px solid #b96f6f;
+}
+
+.auth {
+  color: #b96f6f;
+  font-size: 18px;
+  text-align: center;
+}
+
+.google {
+  color: #b96f6f;
+  font-style: italic;
+}
+
+.google:hover {
+  font-style: normal;
+  color: #b96f6f;
+}
 /* all-products-view */
 
 .shop-all-products-headline {
