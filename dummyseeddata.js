@@ -6,7 +6,7 @@ const productData = [
       'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     description:
       'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-    imageUrl: 'http://dummyimage.com/234x176.png/cc0000/ffffff',
+    imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
     price: '$4.73',
     inventory: 1
   },
