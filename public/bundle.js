@@ -173,7 +173,9 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "all-products",
           key: product.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, product.name));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "product-name"
+        }, product.name));
       }))));
     }
   }]);

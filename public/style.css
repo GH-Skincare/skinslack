@@ -68,17 +68,25 @@ form div {
 
 .all-products {
   font-style: italic;
+  text-align: center;
 }
 
 .all-products-list-container ul {
   padding: 0;
-  margin: 0;
+  margin: 0px;
   list-style-type: none;
 }
 
 .all-products-list-container ul li {
-  width: 150px;
-  height: 100px;
+  width: 250px;
+  height: 300px;
   background-color: #e6cccc;
   float: left;
+  margin: 30px;
+}
+
+.product-name {
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
 }
