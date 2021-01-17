@@ -14,7 +14,7 @@ orderItemsRouter.get('/products/:productId/users/:userId', async function(
       res.send({})
       return
     }
-    console.log(order)
+
     const orderItem = await OrderItem.findOne({
       where: {productId: req.params.productId, orderId: order.id}
     })
@@ -30,10 +30,10 @@ orderItemsRouter.get('/products/:productId/users/:userId', async function(
 
 orderItemsRouter.post('/', async function(req, res, next) {
   try {
-    const orders = await Order.findOrCreate({
+    const order = Order.findOrCreate({
       where: {isActive: true, userId: req.body.userId}
     })
-    const order = orders[0]
+
     const newItem = await OrderItem.create({
       orderId: order.id,
       productId: req.body.productId,

@@ -9,11 +9,11 @@ async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  await Promise.all(
-    userData.map(user => {
-      return User.create(user)
-    })
-  )
+  // await Promise.all(
+  //   userData.map((user) => {
+  //     return User.create(user)
+  //   })
+  // )
   //   [
   //   User.create({ email: 'cody@email.com', password: '123' }),
   //   User.create({ email: 'murphy@email.com', password: '123' })
