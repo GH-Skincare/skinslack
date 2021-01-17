@@ -1,12 +1,18 @@
 # API Routes
 
 Google: curl (type of request here) request
+formatting:
+https://jsonformatter.curiousconcept.com/#
+eager loading - includes
 
 //to create or find a new orderItem
 curl -d "userId=1&quantity=1&productId=1" -X POST http://localhost:8080/api/order_items
 
 //update number of orderItems
 curl -d "quantity=8" -X PUT http://localhost:8080/api/order_items/8
+//update active or inactive after checking out order
+curl -d "isActive= true" -X PUT http://localhost:8080/api/orders/2
+curl -d "isActive= false" -X PUT http://localhost:8080/api/orders/2
 
 //delete an Order item
 curl -X "DELETE" http://localhost:8080/api/order_items/8
@@ -14,7 +20,7 @@ curl -X "DELETE" http://localhost:8080/api/order_items/8
 //Get an orderItem
 curl http://localhost:8080/api/orders/products/1/users/1
 //for order routes
-curl http://localhost:8080/api/orders/users/1
+curl http://localhost:8080/api/orders/users/1/type/inactive
 
 # Boilermaker
 
