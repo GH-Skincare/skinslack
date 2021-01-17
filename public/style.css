@@ -52,6 +52,7 @@ form div {
 /* user-home-welcome */
 
 .welcome-user-email {
+  padding-top: 15px;
   font-size: 20px;
   text-align: center;
   color: #b96f6f;
