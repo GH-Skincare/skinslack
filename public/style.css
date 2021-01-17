@@ -63,8 +63,22 @@ form div {
 .shop-all-products-headline {
   color: #b96f6f;
   font-size: 20px;
+  margin: 15px;
 }
 
 .all-products {
   font-style: italic;
+}
+
+.all-products-list-container ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.all-products-list-container ul li {
+  width: 150px;
+  height: 100px;
+  background-color: #e6cccc;
+  float: left;
 }

@@ -15,12 +15,15 @@ class AllProducts extends React.Component {
     return (
       <div>
         <h1 className="shop-all-products-headline">Shop All Products</h1>
-        {this.props.products.map(product => (
-          <div className="all-products" key={product.id}>
-            {' '}
-            {product.name}{' '}
-          </div>
-        ))}
+        <div className="all-products-list-container">
+          <ul>
+            {this.props.products.map(product => (
+              <div className="all-products" key={product.id}>
+                <li>{product.name}</li>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }

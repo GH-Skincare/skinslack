@@ -167,12 +167,14 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "shop-all-products-headline"
-      }, "Shop All Products"), this.props.products.map(function (product) {
+      }, "Shop All Products"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "all-products-list-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "all-products",
           key: product.id
-        }, ' ', product.name, ' ');
-      }));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, product.name));
+      }))));
     }
   }]);
 
