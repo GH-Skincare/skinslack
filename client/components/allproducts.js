@@ -14,9 +14,12 @@ class AllProducts extends React.Component {
   render() {
     return (
       <div>
-        <h1>ALL PRODUCTS</h1>
+        <h1 className="shop-all-products-headline">Shop All Products</h1>
         {this.props.products.map(product => (
-          <div key={product.id}> {product.name} </div>
+          <div className="all-products" key={product.id}>
+            {' '}
+            {product.name}{' '}
+          </div>
         ))}
       </div>
     )

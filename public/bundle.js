@@ -165,10 +165,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ALL PRODUCTS"), this.props.products.map(function (product) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "shop-all-products-headline"
+      }, "Shop All Products"), this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "all-products",
           key: product.id
-        }, " ", product.name, " ");
+        }, ' ', product.name, ' ');
       }));
     }
   }]);
@@ -360,7 +363,8 @@ var Navbar = function Navbar(_ref) {
     className: "nav-links"
   }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#",
-    onClick: handleClick
+    onClick: handleClick,
+    className: "nav-links"
   }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "/login",
     className: "nav-links"
@@ -489,7 +493,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var UserHome = function UserHome(props) {
   var email = props.email;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome, ", email));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "welcome-user-email"
+  }, "Welcome, ", email, "!"));
 };
 /**
  * CONTAINER

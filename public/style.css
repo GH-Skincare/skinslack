@@ -25,7 +25,7 @@ form div {
 /* nav bar */
 .title {
   color: #b96f6f;
-  font-size: 32px;
+  font-size: 36px;
   text-align: center;
 }
 
@@ -33,13 +33,38 @@ form div {
   color: #c48484;
   font-size: 18px;
   text-align: center;
+  font-style: italic;
 }
 
 /* nav bar links */
-.nav-links,
-a {
+.nav-links {
   color: #b96f6f;
   border: 1px solid;
   padding: 5px;
   border-radius: 2px;
+}
+
+.nav-links:hover {
+  color: #f3e7e7;
+  background-color: #b96f6f;
+}
+
+/* user-home-welcome */
+
+.welcome-user-email {
+  font-size: 20px;
+  text-align: center;
+  color: #b96f6f;
+  font-style: italic;
+}
+
+/* all-products-view */
+
+.shop-all-products-headline {
+  color: #b96f6f;
+  font-size: 20px;
+}
+
+.all-products {
+  font-style: italic;
 }
