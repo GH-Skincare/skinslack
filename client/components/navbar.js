@@ -4,11 +4,11 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import {Navbar, Nav} from 'react-bootstrap'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons'
 
 const Navigationbar = ({handleClick, isLoggedIn}) => (
   <div>
-    {/* <h1 className="title">JIL SkinCare</h1>
-    <h1 className="title-headline">Skincare That Lasts...</h1> */}
     <Navbar className="nav-bar" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand className="brand-name" href="/home">
         JIL SkinCare
@@ -19,6 +19,9 @@ const Navigationbar = ({handleClick, isLoggedIn}) => (
           <Nav.Link href="/allproducts">All Products</Nav.Link>
         </Nav>
         <Nav>
+          <Link to="/cart" className="cart-link">
+            <FontAwesomeIcon icon={faShoppingBag} />
+          </Link>
           <nav>
             {isLoggedIn ? (
               <div>

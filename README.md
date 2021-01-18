@@ -1,3 +1,13 @@
+# Dependancies
+
+font awesome:
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+
+react-bootstrap:
+npm install react-bootstrap bootstrap
+
 # API Routes
 
 Google: curl (type of request here) request
