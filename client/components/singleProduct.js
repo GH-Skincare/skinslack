@@ -16,7 +16,6 @@ export class SingleProduct extends React.Component {
     const product = this.props.product || {}
     return (
       <div className="singleproducts-container">
-        <h1>TESTING: This should render on single product page view.</h1>
         <center>
           <h3>{product.name}</h3>
           <p>{product.price}</p>

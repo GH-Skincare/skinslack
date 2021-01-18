@@ -659,7 +659,7 @@ function (_React$Component) {
       var product = this.props.product || {};
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "singleproducts-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TESTING: This should render on single product page view."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("center", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("center", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: product.imageUrl,
         style: {
           width: '25%',
