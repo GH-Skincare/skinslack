@@ -1,5 +1,5 @@
 const orderItemsRouter = require('express').Router()
-const {OrderItem, Order} = require('../db/models')
+const {OrderItem, Order, Product} = require('../db/models')
 
 orderItemsRouter.get('/products/:productId/users/:userId', async function(
   req,
@@ -34,17 +34,18 @@ orderItemsRouter.post('/', async function(req, res, next) {
       where: {isActive: true, userId: req.body.userId}
     })
     const order = orders[0]
-    if (!order) {
-      res.send({})
-      return
-    }
 
-    const newItem = await OrderItem.create({
+    const orderItem = await OrderItem.create({
       orderId: order.id,
       productId: req.body.productId,
-      quantity: req.body.quantity
+      quantity: 1
     })
-    res.send(newItem)
+
+    const orderItemWithProduct = await OrderItem.findByPk(orderItem.id, {
+      include: Product
+    })
+
+    res.send({orderId: order.id, orderItems: [orderItemWithProduct]})
   } catch (err) {
     next(err)
   }
