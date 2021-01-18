@@ -7,6 +7,7 @@ import {me} from './store'
 import AllProducts from './components/allproducts'
 import SingleProduct from './components/singleProduct'
 import ActiveOrder from './components/activeOrder'
+import AdminView from './components/adminView'
 
 /**
  * COMPONENT
@@ -35,6 +36,7 @@ class Routes extends Component {
               component={SingleProduct}
             />
             <Route exact path="/cart" component={ActiveOrder} />
+            <Route exact path="/admin" component={AdminView} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
