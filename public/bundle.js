@@ -519,9 +519,9 @@ var Navigationbar = function Navigationbar(_ref) {
     to: "/home",
     className: "nav-links"
   }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: "/orders",
+    to: "/orderhistory",
     className: "nav-links"
-  }, "Orders"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Order History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#",
     onClick: handleClick,
     className: "nav-links"
@@ -749,7 +749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./client/store/index.js");
 /* harmony import */ var _components_allproducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/allproducts */ "./client/components/allproducts.js");
 /* harmony import */ var _components_singleProduct__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/singleProduct */ "./client/components/singleProduct.js");
-/* harmony import */ var _components_activeOrder__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/activeOrder */ "./client/components/activeOrder.js");
+/* harmony import */ var _components_activeOrder__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/activeOrder */ "./client/components/activeOrder.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -821,7 +821,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/cart",
-        component: _components_activeOrder__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _components_activeOrder__WEBPACK_IMPORTED_MODULE_8__["default"]
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         component: _components__WEBPACK_IMPORTED_MODULE_4__["Login"]
       }));
