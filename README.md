@@ -30,7 +30,7 @@ curl -X "DELETE" http://localhost:8080/api/order_items/8
 //Get an orderItem
 curl http://localhost:8080/api/orders/products/1/users/1
 //for order routes
-curl http://localhost:8080/api/orders/users/1/type/inactive
+curl http://localhost:8080/api/orders/users/1/type/active
 
 # Boilermaker
 
