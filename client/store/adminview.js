@@ -59,7 +59,7 @@ const initialState = {
   product: {}
 }
 
-export default function admintReducer(state = initialState, action) {
+export default function adminReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCT:
       return {...state, product: action.productId}
