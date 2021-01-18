@@ -1,4 +1,4 @@
-//admin view should be able to see all products component
+//admin view should be able to see all products component (DONE)
 //the all products component should also have buttons to do the following:
 // 1. add to the inventory
 // 2. remove from the inventory
@@ -9,7 +9,7 @@
 import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
-// import {Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 class adminView extends React.Component {
   componentDidMount() {
@@ -29,6 +29,9 @@ class adminView extends React.Component {
                   <p className="product-image">{product.imageUrl}</p>
                   <p className="product-summary">{product.summary}</p>
                   <p className="product-price">{product.price}</p>
+                  <Button className="delete-product" type="submit">
+                    Delete Product
+                  </Button>
                 </li>
               </div>
             ))}
