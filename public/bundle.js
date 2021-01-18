@@ -774,6 +774,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ "./client/store/user.js");
 /* harmony import */ var _products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./products */ "./client/store/products.js");
 /* harmony import */ var _singleProduct__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./singleProduct */ "./client/store/singleProduct.js");
+/* harmony import */ var _orders__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./orders */ "./client/store/orders.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "me", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["me"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
@@ -787,10 +788,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   user: _user__WEBPACK_IMPORTED_MODULE_4__["default"],
   products: _products__WEBPACK_IMPORTED_MODULE_5__["default"],
-  product: _singleProduct__WEBPACK_IMPORTED_MODULE_6__["default"]
+  product: _singleProduct__WEBPACK_IMPORTED_MODULE_6__["default"],
+  orders: _orders__WEBPACK_IMPORTED_MODULE_7__["default"]
 });
 var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_logger__WEBPACK_IMPORTED_MODULE_1__["createLogger"])({
   collapsed: true
@@ -798,6 +801,239 @@ var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["c
 var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer, middleware);
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
+
+/***/ }),
+
+/***/ "./client/store/orders.js":
+/*!********************************!*\
+  !*** ./client/store/orders.js ***!
+  \********************************/
+/*! exports provided: GOT_ORDER, UPDATE_ORDER, GOT_INACTIVE_ORDERS, setOrder, setInactiveOrders, updateOrder, fetchOrder, fetchInactiveOrders, completeOrder, initialState, ordersReducer, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GOT_ORDER", function() { return GOT_ORDER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_ORDER", function() { return UPDATE_ORDER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GOT_INACTIVE_ORDERS", function() { return GOT_INACTIVE_ORDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setOrder", function() { return setOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setInactiveOrders", function() { return setInactiveOrders; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateOrder", function() { return updateOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOrder", function() { return fetchOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchInactiveOrders", function() { return fetchInactiveOrders; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "completeOrder", function() { return completeOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ordersReducer", function() { return ordersReducer; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var GOT_ORDER = 'GOT_ORDER';
+var UPDATE_ORDER = 'UPDATE_ORDER';
+var GOT_INACTIVE_ORDERS = 'GOT_INACTIVE_ORDERS';
+var setOrder = function setOrder(order) {
+  return {
+    type: GOT_ORDER,
+    payload: order
+  };
+};
+var setInactiveOrders = function setInactiveOrders(orders) {
+  return {
+    type: GOT_INACTIVE_ORDERS,
+    payload: orders
+  };
+};
+var updateOrder = function updateOrder() {
+  return {
+    type: UPDATE_ORDER
+  };
+};
+var fetchOrder = function fetchOrder(userId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref2 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(dispatch, getState, _ref) {
+        var axios, _ref3, data;
+
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                axios = _ref.axios;
+                _context.prev = 1;
+                _context.next = 4;
+                return axios.get("/api/orders/users/".concat(userId, "/type/active"));
+
+              case 4:
+                _ref3 = _context.sent;
+                data = _ref3.data;
+                dispatch(setOrder(data));
+                _context.next = 12;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](1);
+                console.log('oh no, error!');
+
+              case 12:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 9]]);
+      }));
+
+      return function (_x, _x2, _x3) {
+        return _ref2.apply(this, arguments);
+      };
+    }()
+  );
+};
+var fetchInactiveOrders = function fetchInactiveOrders(userId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref5 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch, getState, _ref4) {
+        var axios, _ref6, data;
+
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                axios = _ref4.axios;
+                _context2.prev = 1;
+                _context2.next = 4;
+                return axios.get("/api/orders/users/".concat(userId, "/type/inactive"));
+
+              case 4:
+                _ref6 = _context2.sent;
+                data = _ref6.data;
+                dispatch(setInactiveOrders(data));
+                _context2.next = 12;
+                break;
+
+              case 9:
+                _context2.prev = 9;
+                _context2.t0 = _context2["catch"](1);
+                console.log('oh no, error!');
+
+              case 12:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[1, 9]]);
+      }));
+
+      return function (_x4, _x5, _x6) {
+        return _ref5.apply(this, arguments);
+      };
+    }()
+  );
+};
+var completeOrder = function completeOrder(orderId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref8 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch, getState, _ref7) {
+        var axios;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                axios = _ref7.axios;
+                _context3.prev = 1;
+                _context3.next = 4;
+                return axios.put("/api/orders/".concat(orderId), {
+                  isActive: false
+                });
+
+              case 4:
+                dispatch(updateOrder());
+                _context3.next = 10;
+                break;
+
+              case 7:
+                _context3.prev = 7;
+                _context3.t0 = _context3["catch"](1);
+                console.log('oh no, error!');
+
+              case 10:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[1, 7]]);
+      }));
+
+      return function (_x7, _x8, _x9) {
+        return _ref8.apply(this, arguments);
+      };
+    }()
+  );
+};
+var initialState = {
+  activeOrder: {},
+  inactiveOrders: []
+};
+var ordersReducer = function ordersReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case GOT_ORDER:
+      var activeOrder;
+
+      if (action.payload.length === 0) {
+        activeOrder = {};
+      } else {
+        activeOrder = action.payload[0];
+      }
+
+      return _objectSpread({}, state, {
+        activeOrder: activeOrder
+      });
+
+    case UPDATE_ORDER:
+      return {
+        activeOrder: {},
+        inactiveOrders: [].concat(_toConsumableArray(state.inactiveOrders), [state.activeOrder])
+      };
+
+    case GOT_INACTIVE_ORDERS:
+      return _objectSpread({}, state, {
+        inactiveOrders: action.payload
+      });
+
+    default:
+      return state;
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (ordersReducer);
 
 /***/ }),
 
