@@ -16,16 +16,28 @@ export const fetchProduct = id => async dispatch => {
   }
 }
 
-// we'll need to double check the initial state and reducer here because i'm not sure if this is written correctly
-const initialState = {
-  product: {}
-}
+const initialState = {}
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCT:
-      return {...state, product: action.productId}
+      return action.productId
     default:
       return state
   }
 }
+
+// Unsure if the code below is right
+
+// const initialState = {
+//   product: {}
+// }
+
+// export default function productReducer(state = initialState, action) {
+//   switch (action.type) {
+//     case SET_PRODUCT:
+//       return { ...state, product: action.productId }
+//     default:
+//       return state
+//   }
+// }

@@ -6,6 +6,7 @@ import history from '../history'
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
+const ADD_USER = 'ADD_USER'
 
 /**
  * INITIAL STATE
@@ -17,6 +18,7 @@ const defaultUser = {}
  */
 const getUser = user => ({type: GET_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
+const addUser = user => ({type: ADD_USER, user})
 
 /**
  * THUNK CREATORS
@@ -56,6 +58,17 @@ export const logout = () => async dispatch => {
   }
 }
 
+export const addToUsers = user => async dispatch => {
+  try {
+    const {data} = await axios.post(`/api/users`, user)
+    // const {data} = await axios.get(`/api/users`)
+    // dispatch(getUser({data}))
+    dispatch(addUser(data))
+  } catch (error) {
+    console.error(`Error adding user to our database.`)
+  }
+}
+
 /**
  * REDUCER
  */
@@ -65,6 +78,8 @@ export default function(state = defaultUser, action) {
       return action.user
     case REMOVE_USER:
       return defaultUser
+    case ADD_USER:
+      return [...state, action.user]
     default:
       return state
   }

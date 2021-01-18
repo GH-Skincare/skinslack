@@ -1,6 +1,6 @@
 import React from 'react'
-//import {connect} from 'react-redux'
-//import redux thunk here
+import {connect} from 'react-redux'
+import {fetchSingleProduct} from '../store/singleProduct'
 
 export class singleProduct extends React.Component {
   // constructor(props){
@@ -16,15 +16,13 @@ export class singleProduct extends React.Component {
   }
 }
 
-export default singleProduct
-
 //this will be helpful for redux later:
-// const mapState = (state) => {
+const mapState = state => ({
+  product: state.product
+})
 
-// }
+const mapDispatch = dispatch => ({
+  loadSingleProduct: id => dispatch(fetchSingleProduct(id))
+})
 
-// const mapDispatch = (dispatch) => {
-
-// }
-
-// export default connect(mapState, mapDispatch)(singleProduct)
+export default connect(mapState, mapDispatch)(singleProduct)
