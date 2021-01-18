@@ -172,3 +172,27 @@ form div {
   padding: 5px;
   word-wrap: break-word;
 }
+
+/* admin view-plus-minus */
+.create-product.btn.btn-secondary {
+  color: #ffffff;
+  background-color: #b96f6f;
+}
+
+.plus-minus-input {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.plus-minus-input .input-group-field {
+  text-align: center;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 2px;
+}
+
+.plus-minus-input .input-group-button .circle {
+  border-radius: 50%;
+  padding: 0.25em 0.8em;
+}
