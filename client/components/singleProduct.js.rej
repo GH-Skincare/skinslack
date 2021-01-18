@@ -1,0 +1,6 @@
+diff a/client/components/singleProduct.js b/client/components/singleProduct.js	(rejected hunks)
+@@ -2,2 +2,2 @@ import React from 'react'
+-import { connect } from 'react-redux'
+-import { fetchSingleProduct } from '../store/singleProduct'
++import {connect} from 'react-redux'
++import {fetchSingleProduct} from '../store/singleProduct'
