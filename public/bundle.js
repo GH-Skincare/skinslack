@@ -519,9 +519,9 @@ var Navigationbar = function Navigationbar(_ref) {
     to: "/home",
     className: "nav-links"
   }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: "/orders",
+    to: "/orderhistory",
     className: "nav-links"
-  }, "Orders"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Order History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#",
     onClick: handleClick,
     className: "nav-links"
