@@ -100,7 +100,8 @@ form div {
 }
 /* all-products-view */
 
-.shop-all-products-headline {
+.shop-all-products-headline,
+.admin-view-headline {
   color: #b96f6f;
   font-size: 20px;
   margin: 15px;
@@ -111,14 +112,16 @@ form div {
   text-align: center;
 }
 
-.all-products-list-container ul {
+.all-products-list-container ul,
+.admin-view-container ul {
   padding: 0;
   padding-left: 10px;
   margin: 0px;
   list-style-type: none;
 }
 
-.all-products-list-container ul li {
+.all-products-list-container ul li,
+.admin-view-container ul li {
   width: 350px;
   height: 400px;
   background-color: #e6cccc;

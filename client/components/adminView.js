@@ -29,10 +29,6 @@ class adminView extends React.Component {
                   <p className="product-image">{product.imageUrl}</p>
                   <p className="product-summary">{product.summary}</p>
                   <p className="product-price">{product.price}</p>
-                  <br />
-                  <p>
-                    <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
-                  </p>
                 </li>
               </div>
             ))}

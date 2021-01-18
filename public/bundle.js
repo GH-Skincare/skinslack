@@ -299,7 +299,7 @@ function (_React$Component) {
           className: "product-summary"
         }, product.summary), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-price"
-        }, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2B50\uFE0F \u2B50 \u2B50\uFE0F \u2B50\uFE0F \u2B50\uFE0F "))));
+        }, product.price)));
       }))));
     }
   }]);
