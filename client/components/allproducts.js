@@ -2,6 +2,7 @@ import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'
+import {fetchActiveOrder, createOrderItem} from '../store/orders'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class AllProducts extends React.Component {
 
   componentDidMount() {
     this.props.loadProducts()
+    this.props.loadActiveOrder(this.props.userId)
   }
 
   render() {
@@ -18,23 +20,51 @@ class AllProducts extends React.Component {
         <h1 className="shop-all-products-headline">Shop All Products</h1>
         <div className="all-products-list-container">
           <ul>
-            {this.props.products.map(product => (
-              <div className="all-products" key={product.id}>
-                <li className="product-stats">
-                  <p className="product-name">{product.name}</p>
-                  <p className="product-image">{product.imageUrl}</p>
-                  <p className="product-summary">{product.summary}</p>
-                  <p className="product-price">{product.price}</p>
-                  <Button className="add-cart" type="submit">
-                    Add to Bag 🛍
-                  </Button>
-                  <br />
-                  <p>
-                    <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
-                  </p>
-                </li>
-              </div>
-            ))}
+            {this.props.products.map(product => {
+              let orderItemsArray =
+                this.props.activeOrder.orderItems &&
+                this.props.activeOrder.orderItems.filter(
+                  item => item.productId === product.id
+                )
+              let orderItem
+              if (
+                orderItemsArray === undefined ||
+                orderItemsArray.length === 0
+              ) {
+                orderItem = null
+              } else {
+                orderItem = orderItemsArray[0]
+              }
+
+              return (
+                <div className="all-products" key={product.id}>
+                  <li className="product-stats">
+                    <p className="product-name">{product.name}</p>
+                    <p className="product-image">{product.imageUrl}</p>
+                    <p className="product-summary">{product.summary}</p>
+                    <p className="product-price">{product.price}</p>
+                    {orderItem !== null ? (
+                      <div>Quantity: {orderItem.quantity}</div>
+                    ) : (
+                      <Button
+                        className="add-cart"
+                        type="submit"
+                        onClick={() =>
+                          this.props.addToCart(this.props.userId, product.id)
+                        }
+                      >
+                        Add to Bag 🛍
+                      </Button>
+                    )}
+
+                    <br />
+                    <p>
+                      <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
+                    </p>
+                  </li>
+                </div>
+              )
+            })}
           </ul>
         </div>
       </div>
@@ -44,13 +74,18 @@ class AllProducts extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.products
+    products: state.products,
+    activeOrder: state.orders.activeOrder,
+    userId: state.user.id
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    loadProducts: () => dispatch(fetchProducts())
+    loadProducts: () => dispatch(fetchProducts()),
+    loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
+    addToCart: (userId, productId) =>
+      dispatch(createOrderItem(userId, productId))
   }
 }
 
