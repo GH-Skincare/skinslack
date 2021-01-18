@@ -1,3 +1,13 @@
+# Dependancies
+
+font awesome:
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+
+react-bootstrap:
+npm install react-bootstrap bootstrap
+
 # API Routes
 
 Google: curl (type of request here) request
@@ -20,7 +30,7 @@ curl -X "DELETE" http://localhost:8080/api/order_items/8
 //Get an orderItem
 curl http://localhost:8080/api/orders/products/1/users/1
 //for order routes
-curl http://localhost:8080/api/orders/users/1/type/inactive
+curl http://localhost:8080/api/orders/users/1/type/active
 
 # Boilermaker
 
