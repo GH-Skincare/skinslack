@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import addUser from 'react-redux'
 
 export class UserForm extends Component {
   constructor() {
@@ -37,3 +38,9 @@ export class UserForm extends Component {
     )
   }
 }
+
+const mapDispatch = dispatch => ({
+  addingUser: user => dispatch(addUser(user))
+})
+
+export default connect(null, mapDispatch)(UserForm)
