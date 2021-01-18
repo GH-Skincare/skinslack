@@ -9,11 +9,11 @@ const db = new Sequelize(
     logging: false,
     operatorsAliases: false,
     dialect: 'postgres',
-    protocol: 'postgres',
-    ssl: true,
-    dialectOptions: {
-      ssl: true
-    }
+    protocol: 'postgres'
+    // ssl: true,
+    // dialectOptions: {
+    //   ssl: true
+    // }
   }
 )
 

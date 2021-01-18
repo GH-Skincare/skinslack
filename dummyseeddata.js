@@ -3,18 +3,17 @@ const productData = [
     id: 1,
     name: 'Health',
     summary:
-      'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.',
+      'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     description:
       'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-    imageUrl: 'http://dummyimage.com/234x176.png/cc0000/ffffff',
+    imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
     price: '$4.73',
     inventory: 1
   },
   {
     id: 2,
     name: 'Music',
-    summary:
-      'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
+    summary: 'Cras pellentesque volutpat dui.',
     description:
       'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.',
     imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
@@ -25,7 +24,7 @@ const productData = [
     id: 3,
     name: 'Health',
     summary:
-      'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.',
+      'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     description:
       'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     imageUrl: 'http://dummyimage.com/197x249.png/dddddd/000000',
@@ -35,8 +34,7 @@ const productData = [
   {
     id: 4,
     name: 'Home',
-    summary:
-      'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
+    summary: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     description:
       'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.',
     imageUrl: 'http://dummyimage.com/141x104.jpg/ff4444/ffffff',
@@ -46,8 +44,7 @@ const productData = [
   {
     id: 5,
     name: 'Health',
-    summary:
-      'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
+    summary: 'Aenean lectus. Pellen.',
     description:
       'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.',
     imageUrl: 'http://dummyimage.com/208x153.jpg/ff4444/ffffff',
@@ -58,7 +55,7 @@ const productData = [
     id: 6,
     name: 'Clothing',
     summary:
-      'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
+      'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     description:
       'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
     imageUrl: 'http://dummyimage.com/101x180.bmp/5fa2dd/ffffff',
@@ -79,7 +76,7 @@ const productData = [
     id: 8,
     name: 'Outdoors',
     summary:
-      'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
+      'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.',
     description:
       'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
     imageUrl: 'http://dummyimage.com/160x169.bmp/dddddd/000000',
@@ -90,7 +87,7 @@ const productData = [
     id: 9,
     name: 'Beauty',
     summary:
-      'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.',
+      'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     description:
       'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     imageUrl: 'http://dummyimage.com/234x145.bmp/dddddd/000000',
@@ -101,7 +98,7 @@ const productData = [
     id: 10,
     name: 'Sports',
     summary:
-      'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+      'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     description:
       'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.',
     imageUrl: 'http://dummyimage.com/136x175.png/cc0000/ffffff',
@@ -111,8 +108,7 @@ const productData = [
   {
     id: 11,
     name: 'Shoes',
-    summary:
-      'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.',
+    summary: 'Nulla ac enim. Duis bibendum.',
     description:
       'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
     imageUrl: 'http://dummyimage.com/213x139.jpg/cc0000/ffffff',
@@ -133,7 +129,7 @@ const productData = [
     id: 13,
     name: 'Health',
     summary:
-      'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
+      'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.',
     description:
       'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
     imageUrl: 'http://dummyimage.com/226x182.jpg/ff4444/ffffff',
@@ -154,7 +150,7 @@ const productData = [
     id: 15,
     name: 'Automotive',
     summary:
-      'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     description:
       'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
     imageUrl: 'http://dummyimage.com/112x151.bmp/5fa2dd/ffffff',
@@ -165,7 +161,7 @@ const productData = [
     id: 16,
     name: 'Industrial',
     summary:
-      'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.',
+      'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
     description:
       'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
     imageUrl: 'http://dummyimage.com/123x233.jpg/5fa2dd/ffffff',
@@ -196,8 +192,7 @@ const productData = [
   {
     id: 19,
     name: 'Computers',
-    summary:
-      'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
+    summary: 'Etiam vel augue. Vestibulum rutrum rutrum neque.',
     description: 'Pellentesque ultrices mattis odio.',
     imageUrl: 'http://dummyimage.com/246x166.png/cc0000/ffffff',
     price: '$5.68',
@@ -207,7 +202,7 @@ const productData = [
     id: 20,
     name: 'Electronics',
     summary:
-      'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',
+      'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.',
     description:
       'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.',
     imageUrl: 'http://dummyimage.com/148x181.bmp/dddddd/000000',
@@ -250,7 +245,7 @@ const productData = [
     id: 24,
     name: 'Music',
     summary:
-      'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.',
+      'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.',
     description:
       'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     imageUrl: 'http://dummyimage.com/147x224.bmp/ff4444/ffffff',
@@ -260,8 +255,7 @@ const productData = [
   {
     id: 25,
     name: 'Toys',
-    summary:
-      'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.',
+    summary: 'In eleifend quam a odio.',
     description:
       'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.',
     imageUrl: 'http://dummyimage.com/223x110.png/cc0000/ffffff',
@@ -272,7 +266,7 @@ const productData = [
     id: 26,
     name: 'Books',
     summary:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.',
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.',
     description:
       'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
     imageUrl: 'http://dummyimage.com/242x128.jpg/dddddd/000000',
@@ -282,8 +276,7 @@ const productData = [
   {
     id: 27,
     name: 'Garden',
-    summary:
-      'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
+    summary: 'Vivamus vestibulum sagittis sapien.',
     description:
       'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
     imageUrl: 'http://dummyimage.com/113x222.jpg/cc0000/ffffff',
@@ -294,7 +287,7 @@ const productData = [
     id: 28,
     name: 'Shoes',
     summary:
-      'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.',
+      'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.',
     description:
       'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
     imageUrl: 'http://dummyimage.com/204x190.png/cc0000/ffffff',
@@ -315,8 +308,7 @@ const productData = [
   {
     id: 30,
     name: 'Jewelery',
-    summary:
-      'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.',
+    summary: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.',
     description:
       'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
     imageUrl: 'http://dummyimage.com/210x146.bmp/ff4444/ffffff',
@@ -347,8 +339,7 @@ const productData = [
   {
     id: 33,
     name: 'Industrial',
-    summary:
-      'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
+    summary: 'Donec quis orci eget orci vehicula condimentum.',
     description: 'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.',
     imageUrl: 'http://dummyimage.com/162x245.png/ff4444/ffffff',
     price: '$8.48',
@@ -357,8 +348,7 @@ const productData = [
   {
     id: 34,
     name: 'Garden',
-    summary:
-      'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
+    summary: 'Aenean lectus. Pellentesque eget nunc.',
     description:
       'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
     imageUrl: 'http://dummyimage.com/172x148.png/cc0000/ffffff',
@@ -390,7 +380,7 @@ const productData = [
     id: 37,
     name: 'Tools',
     summary:
-      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.',
+      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.',
     description:
       'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     imageUrl: 'http://dummyimage.com/146x170.jpg/ff4444/ffffff',
@@ -411,8 +401,7 @@ const productData = [
   {
     id: 39,
     name: 'Home',
-    summary:
-      'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.',
+    summary: 'Praesent blandit. Nam nulla.',
     description:
       'Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     imageUrl: 'http://dummyimage.com/186x229.png/ff4444/ffffff',
@@ -433,7 +422,7 @@ const productData = [
     id: 41,
     name: 'Outdoors',
     summary:
-      'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.',
+      'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. ',
     description:
       'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
     imageUrl: 'http://dummyimage.com/129x187.bmp/cc0000/ffffff',
@@ -444,7 +433,7 @@ const productData = [
     id: 42,
     name: 'Grocery',
     summary:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.',
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
     description:
       'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.',
     imageUrl: 'http://dummyimage.com/228x133.jpg/cc0000/ffffff',
@@ -455,7 +444,7 @@ const productData = [
     id: 43,
     name: 'Computers',
     summary:
-      'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
+      'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula.',
     description:
       'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
     imageUrl: 'http://dummyimage.com/108x156.png/5fa2dd/ffffff',
@@ -466,7 +455,7 @@ const productData = [
     id: 44,
     name: 'Tools',
     summary:
-      'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.',
+      'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.',
     description:
       'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     imageUrl: 'http://dummyimage.com/128x193.jpg/dddddd/000000',
@@ -476,8 +465,7 @@ const productData = [
   {
     id: 45,
     name: 'Beauty',
-    summary:
-      'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+    summary: 'Sed sagittis.',
     description: 'Nulla mollis molestie lorem. Quisque ut erat.',
     imageUrl: 'http://dummyimage.com/129x195.jpg/cc0000/ffffff',
     price: '$0.18',
@@ -497,7 +485,7 @@ const productData = [
     id: 47,
     name: 'Books',
     summary:
-      'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
+      'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.',
     description:
       'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
     imageUrl: 'http://dummyimage.com/124x179.jpg/ff4444/ffffff',
@@ -508,7 +496,7 @@ const productData = [
     id: 48,
     name: 'Automotive',
     summary:
-      'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
+      'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
     description:
       'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.',
     imageUrl: 'http://dummyimage.com/111x124.png/dddddd/000000',
@@ -519,7 +507,7 @@ const productData = [
     id: 49,
     name: 'Kids',
     summary:
-      'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.',
+      'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     description:
       'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.',
     imageUrl: 'http://dummyimage.com/229x178.png/ff4444/ffffff',
@@ -531,7 +519,7 @@ const productData = [
     name: 'Toys',
     summary: 'Suspendisse potenti.',
     description:
-      'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.',
+      'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. ',
     imageUrl: 'http://dummyimage.com/199x179.bmp/dddddd/000000',
     price: '$7.97',
     inventory: 50
