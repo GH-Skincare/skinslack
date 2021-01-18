@@ -296,12 +296,9 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-name"
         }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "product-image"
-        }, product.imageUrl), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "product-summary"
-        }, product.summary), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-price"
         }, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+          variant: "outline-secondary",
           className: "delete-product",
           type: "submit"
         }, "Delete Product")));

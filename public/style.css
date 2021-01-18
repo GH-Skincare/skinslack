@@ -120,8 +120,7 @@ form div {
   list-style-type: none;
 }
 
-.all-products-list-container ul li,
-.admin-view-container ul li {
+.all-products-list-container ul li {
   width: 350px;
   height: 400px;
   background-color: #e6cccc;
@@ -134,6 +133,17 @@ form div {
 .product-stats {
   padding-top: 15px;
   font-size: 20px;
+}
+
+/* admin product view */
+.admin-view-container ul li {
+  width: 350px;
+  height: 250px;
+  background-color: #e6cccc;
+  float: left;
+  margin: 30px;
+  padding: 5px;
+  word-wrap: break-word;
 }
 
 /* specific styling for each product category */
