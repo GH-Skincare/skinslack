@@ -14,7 +14,7 @@ export const deleteProduct = id => ({
   id
 })
 
-const updateProduct = id => ({
+export const updateProduct = id => ({
   type: UPDATE_PRODUCT,
   id
 })
