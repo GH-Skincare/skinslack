@@ -1,30 +1,28 @@
 const productData = [
   {
     id: 1,
-    name: 'Health',
-    summary:
-      'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
+    name: 'Wildest Dreams Mask',
+    summary: 'Your skin will feel new, almost like in your wildest dreams!',
     description:
       'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
     imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
-    price: '$4.73',
+    price: '$24.99',
     inventory: 1
   },
   {
     id: 2,
-    name: 'Music',
-    summary: 'Cras pellentesque volutpat dui.',
+    name: 'Lina Lip Balm',
+    summary: 'Lip care is part of Skincare!',
     description:
       'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.',
     imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
-    price: '$9.51',
+    price: '$12.99',
     inventory: 2
   },
   {
     id: 3,
-    name: 'Health',
-    summary:
-      'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    name: 'JJ Cream',
+    summary: 'Moisturize all day, every day!',
     description:
       'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     imageUrl: 'http://dummyimage.com/197x249.png/dddddd/000000',
@@ -33,8 +31,8 @@ const productData = [
   },
   {
     id: 4,
-    name: 'Home',
-    summary: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
+    name: 'Ivy Mask',
+    summary: 'Face mask with scents of lemon and lime.',
     description:
       'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.',
     imageUrl: 'http://dummyimage.com/141x104.jpg/ff4444/ffffff',
@@ -43,40 +41,38 @@ const productData = [
   },
   {
     id: 5,
-    name: 'Health',
-    summary: 'Aenean lectus. Pellen.',
+    name: 'React Retinol',
+    summary: 'Eye cream for that hustle!',
     description:
       'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.',
     imageUrl: 'http://dummyimage.com/208x153.jpg/ff4444/ffffff',
-    price: '$1.24',
+    price: '$28.99',
     inventory: 5
   },
   {
     id: 6,
-    name: 'Clothing',
-    summary:
-      'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+    name: 'Node Pore Cleanser',
+    summary: 'Makeup remover that also moisturizes!',
     description:
       'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
     imageUrl: 'http://dummyimage.com/101x180.bmp/5fa2dd/ffffff',
-    price: '$2.28',
+    price: '$7.99',
     inventory: 6
   },
   {
     id: 7,
-    name: 'Tools',
-    summary: 'Etiam justo.',
+    name: 'Botanical Betsy',
+    summary: 'Face mist that works with or without makeup!',
     description:
       'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
     imageUrl: 'http://dummyimage.com/178x240.bmp/dddddd/000000',
-    price: '$5.56',
+    price: '$11.50',
     inventory: 7
   },
   {
     id: 8,
-    name: 'Outdoors',
-    summary:
-      'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.',
+    name: "Sydney's Sculpting Cream",
+    summary: 'Redux the stress, regenerate the cells.',
     description:
       'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
     imageUrl: 'http://dummyimage.com/160x169.bmp/dddddd/000000',
@@ -85,9 +81,8 @@ const productData = [
   },
   {
     id: 9,
-    name: 'Beauty',
-    summary:
-      'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
+    name: "Mary's Mint Mask",
+    summary: 'Mint mask leaving your skin minty fresh!',
     description:
       'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     imageUrl: 'http://dummyimage.com/234x145.bmp/dddddd/000000',
