@@ -18,7 +18,7 @@ export const updateOrder = () => ({
   type: UPDATE_ORDER
 })
 
-export const fetchOrder = userId => async (dispatch, getState, {axios}) => {
+export const fetchActiveOrder = userId => async dispatch => {
   try {
     const {data} = await axios.get(`/api/orders/users/${userId}/type/active`)
     dispatch(setOrder(data))
@@ -27,11 +27,7 @@ export const fetchOrder = userId => async (dispatch, getState, {axios}) => {
   }
 }
 
-export const fetchInactiveOrders = userId => async (
-  dispatch,
-  getState,
-  {axios}
-) => {
+export const fetchInactiveOrders = userId => async dispatch => {
   try {
     const {data} = await axios.get(`/api/orders/users/${userId}/type/inactive`)
     dispatch(setInactiveOrders(data))
@@ -40,7 +36,7 @@ export const fetchInactiveOrders = userId => async (
   }
 }
 
-export const completeOrder = orderId => async (dispatch, getState, {axios}) => {
+export const completeOrder = orderId => async dispatch => {
   try {
     await axios.put(`/api/orders/${orderId}`, {isActive: false})
     dispatch(updateOrder())
@@ -49,7 +45,7 @@ export const completeOrder = orderId => async (dispatch, getState, {axios}) => {
   }
 }
 
-export const initialState = {
+const initialState = {
   activeOrder: {},
   inactiveOrders: []
 }
