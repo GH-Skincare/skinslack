@@ -406,6 +406,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/products */ "./client/store/products.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -423,6 +424,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -458,9 +460,11 @@ function (_React$Component) {
           key: product.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "product-stats"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+          to: "/singleproduct/".concat(product.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-name"
-        }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-image"
         }, product.imageUrl), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-summary"

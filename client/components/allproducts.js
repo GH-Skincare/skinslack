@@ -2,6 +2,7 @@ import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class AllProducts extends React.Component {
             {this.props.products.map(product => (
               <div className="all-products" key={product.id}>
                 <li className="product-stats">
-                  <p className="product-name">{product.name}</p>
+                  <Link to={`/singleproduct/${product.id}`}>
+                    <p className="product-name">{product.name}</p>
+                  </Link>
                   <p className="product-image">{product.imageUrl}</p>
                   <p className="product-summary">{product.summary}</p>
                   <p className="product-price">{product.price}</p>
