@@ -3,6 +3,12 @@ import axios from 'axios'
 export const GOT_ORDER = 'GOT_ORDER'
 export const UPDATE_ORDER = 'UPDATE_ORDER'
 export const GOT_INACTIVE_ORDERS = 'GOT_INACTIVE_ORDERS'
+export const NEW_ORDER_ITEM = 'NEW_ORDER_ITEM'
+
+export const newOrderItem = order => ({
+  type: NEW_ORDER_ITEM,
+  payload: order
+})
 
 export const setOrder = order => ({
   type: GOT_ORDER,
@@ -45,6 +51,15 @@ export const completeOrder = orderId => async dispatch => {
   }
 }
 
+export const createOrderItem = (userId, productId) => async dispatch => {
+  try {
+    const {data} = await axios.post('/api/order_items', {userId, productId})
+    dispatch(newOrderItem(data))
+  } catch (error) {
+    console.log('oh no, error!', error)
+  }
+}
+
 const initialState = {
   activeOrder: {},
   inactiveOrders: []
@@ -67,6 +82,21 @@ export const ordersReducer = (state = initialState, action) => {
       }
     case GOT_INACTIVE_ORDERS:
       return {...state, inactiveOrders: action.payload}
+    case NEW_ORDER_ITEM:
+      if (state.activeOrder.orderItems) {
+        return {
+          ...state,
+          activeOrder: {
+            ...state.activeOrder,
+            orderItems: [
+              ...state.activeOrder.orderItems,
+              ...action.payload.orderItems
+            ]
+          }
+        }
+      } else {
+        return {...state, activeOrder: action.payload}
+      }
     default:
       return state
   }

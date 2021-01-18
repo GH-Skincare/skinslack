@@ -19,7 +19,7 @@ class ActiveOrder extends React.Component {
     ) {
       return <div> Cart Empty </div>
     }
-    console.log(this.props.activeOrder)
+
     return (
       <div>
         <h1 className="shop-all-products-headline">Shopping Cart</h1>
@@ -35,9 +35,10 @@ class ActiveOrder extends React.Component {
                   <p className="product-price">
                     Quantity: {orderItem.quantity}
                   </p>
-                  <Button className="add-cart" type="submit">
-                    Add to Bag 🛍
-                  </Button>
+                  <div>
+                    {' '}
+                    Thanks for adding to your bag! You have Great taste!{' '}
+                  </div>
                   <br />
                   <p>
                     <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>

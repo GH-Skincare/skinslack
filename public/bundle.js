@@ -171,7 +171,6 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " Cart Empty ");
       }
 
-      console.log(this.props.activeOrder);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "shop-all-products-headline"
       }, "Shopping Cart"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -190,10 +189,7 @@ function (_React$Component) {
           className: "product-price"
         }, orderItem.product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-price"
-        }, "Quantity: ", orderItem.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-          className: "add-cart",
-          type: "submit"
-        }, "Add to Bag \uD83D\uDECD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2B50\uFE0F \u2B50 \u2B50\uFE0F \u2B50\uFE0F \u2B50\uFE0F "))));
+        }, "Quantity: ", orderItem.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, ' ', "Thanks for adding to your bag! You have Great taste!", ' '), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2B50\uFE0F \u2B50 \u2B50\uFE0F \u2B50\uFE0F \u2B50\uFE0F "))));
       }))));
     }
   }]);
@@ -410,7 +406,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/products */ "./client/store/products.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -428,7 +423,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -464,11 +458,9 @@ function (_React$Component) {
           key: product.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "product-stats"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-          to: "/singleproduct/".concat(product.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-name"
-        }, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-image"
         }, product.imageUrl), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-summary"
@@ -1189,7 +1181,7 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer, m
 /*!********************************!*\
   !*** ./client/store/orders.js ***!
   \********************************/
-/*! exports provided: GOT_ORDER, UPDATE_ORDER, GOT_INACTIVE_ORDERS, setOrder, setInactiveOrders, updateOrder, fetchActiveOrder, fetchInactiveOrders, completeOrder, ordersReducer, default */
+/*! exports provided: GOT_ORDER, UPDATE_ORDER, GOT_INACTIVE_ORDERS, NEW_ORDER_ITEM, newOrderItem, setOrder, setInactiveOrders, updateOrder, fetchActiveOrder, fetchInactiveOrders, completeOrder, createOrderItem, ordersReducer, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1197,12 +1189,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GOT_ORDER", function() { return GOT_ORDER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_ORDER", function() { return UPDATE_ORDER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GOT_INACTIVE_ORDERS", function() { return GOT_INACTIVE_ORDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_ORDER_ITEM", function() { return NEW_ORDER_ITEM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newOrderItem", function() { return newOrderItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setOrder", function() { return setOrder; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setInactiveOrders", function() { return setInactiveOrders; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateOrder", function() { return updateOrder; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchActiveOrder", function() { return fetchActiveOrder; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchInactiveOrders", function() { return fetchInactiveOrders; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "completeOrder", function() { return completeOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createOrderItem", function() { return createOrderItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ordersReducer", function() { return ordersReducer; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -1228,6 +1223,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var GOT_ORDER = 'GOT_ORDER';
 var UPDATE_ORDER = 'UPDATE_ORDER';
 var GOT_INACTIVE_ORDERS = 'GOT_INACTIVE_ORDERS';
+var NEW_ORDER_ITEM = 'NEW_ORDER_ITEM';
+var newOrderItem = function newOrderItem(order) {
+  return {
+    type: NEW_ORDER_ITEM,
+    payload: order
+  };
+};
 var setOrder = function setOrder(order) {
   return {
     type: GOT_ORDER,
@@ -1372,6 +1374,52 @@ var completeOrder = function completeOrder(orderId) {
     }()
   );
 };
+var createOrderItem = function createOrderItem(userId, productId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref6 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(dispatch) {
+        var _ref7, data;
+
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/order_items', {
+                  userId: userId,
+                  productId: productId
+                });
+
+              case 3:
+                _ref7 = _context4.sent;
+                data = _ref7.data;
+                dispatch(newOrderItem(data));
+                _context4.next = 11;
+                break;
+
+              case 8:
+                _context4.prev = 8;
+                _context4.t0 = _context4["catch"](0);
+                console.log('oh no, error!', _context4.t0);
+
+              case 11:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 8]]);
+      }));
+
+      return function (_x4) {
+        return _ref6.apply(this, arguments);
+      };
+    }()
+  );
+};
 var initialState = {
   activeOrder: {},
   inactiveOrders: []
@@ -1404,6 +1452,19 @@ var ordersReducer = function ordersReducer() {
       return _objectSpread({}, state, {
         inactiveOrders: action.payload
       });
+
+    case NEW_ORDER_ITEM:
+      if (state.activeOrder.orderItems) {
+        return _objectSpread({}, state, {
+          activeOrder: _objectSpread({}, state.activeOrder, {
+            orderItems: [].concat(_toConsumableArray(state.activeOrder.orderItems), _toConsumableArray(action.payload.orderItems))
+          })
+        });
+      } else {
+        return _objectSpread({}, state, {
+          activeOrder: action.payload
+        });
+      }
 
     default:
       return state;
