@@ -20,7 +20,7 @@ const Navigationbar = ({handleClick, isLoggedIn}) => (
         </Nav>
         <Nav>
           <Link to="/cart" className="cart-link">
-            <FontAwesomeIcon icon={faShoppingBag} />
+            <FontAwesomeIcon icon={faShoppingBag} size="2x" color="white" />
           </Link>
           <nav>
             {isLoggedIn ? (
