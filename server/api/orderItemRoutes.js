@@ -30,9 +30,14 @@ orderItemsRouter.get('/products/:productId/users/:userId', async function(
 
 orderItemsRouter.post('/', async function(req, res, next) {
   try {
-    const order = Order.findOrCreate({
+    const orders = await Order.findOrCreate({
       where: {isActive: true, userId: req.body.userId}
     })
+    const order = orders[0]
+    if (!order) {
+      res.send({})
+      return
+    }
 
     const newItem = await OrderItem.create({
       orderId: order.id,
