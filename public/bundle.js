@@ -568,15 +568,22 @@ react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Navbar"].propTypes = {
 /*!********************************************!*\
   !*** ./client/components/singleProduct.js ***!
   \********************************************/
-/*! exports provided: singleProduct, default */
+/*! exports provided: SingleProduct, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "singleProduct", function() { return singleProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SingleProduct", function() { return SingleProduct; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_singleProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/singleProduct */ "./client/store/singleProduct.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -594,38 +601,95 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- //import {connect} from 'react-redux'
-//import redux thunk here
 
-var singleProduct =
+
+
+
+var SingleProduct =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(singleProduct, _React$Component);
+  _inherits(SingleProduct, _React$Component);
 
-  function singleProduct() {
-    _classCallCheck(this, singleProduct);
+  function SingleProduct() {
+    _classCallCheck(this, SingleProduct);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(singleProduct).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(SingleProduct).apply(this, arguments));
   }
 
-  _createClass(singleProduct, [{
+  _createClass(SingleProduct, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return this.props.loadSingleProduct(this.props.match.params);
+
+              case 3:
+                _context.next = 8;
+                break;
+
+              case 5:
+                _context.prev = 5;
+                _context.t0 = _context["catch"](0);
+                console.log("There was an error while trying to fetch product details!");
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 5]]);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
     key: "render",
-    // constructor(props){
-    //   super(props)
-    // }
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TESTING: This should render on single product page view."));
+      var product = this.props.product || {};
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "singleproducts-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TESTING: This should render on single product page view."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("center", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: product.imageUrl,
+        style: {
+          width: '25%',
+          margin: '20px 0'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+        className: "add-cart",
+        type: "submit"
+      }, "Add to Bag \uD83D\uDECD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u2B50\uFE0F \u2B50 \u2B50\uFE0F \u2B50\uFE0F \u2B50\uFE0F "))));
     }
   }]);
 
-  return singleProduct;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-/* harmony default export */ __webpack_exports__["default"] = (singleProduct); //this will be helpful for redux later:
-// const mapState = (state) => {
-// }
-// const mapDispatch = (dispatch) => {
-// }
-// export default connect(mapState, mapDispatch)(singleProduct)
+  return SingleProduct;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); //this will be helpful for redux later:
+
+var mapState = function mapState(state) {
+  return {
+    product: state.product
+  };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    loadSingleProduct: function loadSingleProduct(id) {
+      return dispatch(Object(_store_singleProduct__WEBPACK_IMPORTED_MODULE_2__["fetchSingleProduct"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState, mapDispatch)(SingleProduct));
 
 /***/ }),
 
@@ -749,7 +813,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./client/store/index.js");
 /* harmony import */ var _components_allproducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/allproducts */ "./client/components/allproducts.js");
 /* harmony import */ var _components_singleProduct__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/singleProduct */ "./client/components/singleProduct.js");
-/* harmony import */ var _components_activeOrder__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/activeOrder */ "./client/components/activeOrder.js");
+/* harmony import */ var _components_activeOrder__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/activeOrder */ "./client/components/activeOrder.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -816,12 +880,12 @@ function (_Component) {
         component: _components_allproducts__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
-        path: "/singleproduct",
+        path: "/singleproduct/:productId",
         component: _components_singleProduct__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/cart",
-        component: _components_activeOrder__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _components_activeOrder__WEBPACK_IMPORTED_MODULE_8__["default"]
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         component: _components__WEBPACK_IMPORTED_MODULE_4__["Login"]
       }));
@@ -889,7 +953,7 @@ socket.on('connect', function () {
 /*!*******************************!*\
   !*** ./client/store/index.js ***!
   \*******************************/
-/*! exports provided: default, me, auth, logout */
+/*! exports provided: default, me, auth, logout, addToUsers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -909,6 +973,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["logout"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addToUsers", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["addToUsers"]; });
 
 
 
@@ -1165,26 +1231,52 @@ var ordersReducer = function ordersReducer() {
 /*!**********************************!*\
   !*** ./client/store/products.js ***!
   \**********************************/
-/*! exports provided: setProducts, fetchProducts, default */
+/*! exports provided: setProducts, addProduct, deleteProduct, fetchProducts, createProduct, removeProduct, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setProducts", function() { return setProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addProduct", function() { return addProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteProduct", function() { return deleteProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProducts", function() { return fetchProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createProduct", function() { return createProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeProduct", function() { return removeProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return productsReducer; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 var SET_PRODUCTS = 'SET_PRODUCTS';
+var ADD_PRODUCT = 'ADD_PRODUCT';
+var DELETE_PRODUCT = 'DELETE_PRODUCT';
 var setProducts = function setProducts(products) {
   return {
     type: SET_PRODUCTS,
     products: products
+  };
+};
+var addProduct = function addProduct(product) {
+  return {
+    type: ADD_PRODUCT,
+    product: product
+  };
+};
+var deleteProduct = function deleteProduct(id) {
+  return {
+    type: DELETE_PRODUCT,
+    id: id
   };
 };
 var fetchProducts = function fetchProducts() {
@@ -1214,7 +1306,7 @@ var fetchProducts = function fetchProducts() {
               case 8:
                 _context.prev = 8;
                 _context.t0 = _context["catch"](0);
-                console.error("Error fetching products from our API :(");
+                console.log("Error fetching products from our API :(");
 
               case 11:
               case "end":
@@ -1230,6 +1322,101 @@ var fetchProducts = function fetchProducts() {
     }()
   );
 };
+var createProduct = function createProduct(product) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref3 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch) {
+        var _ref4, data;
+
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/allproducts', product);
+
+              case 3:
+                _context2.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/allproducts');
+
+              case 5:
+                _ref4 = _context2.sent;
+                data = _ref4.data;
+                dispatch(addProduct(data));
+                _context2.next = 13;
+                break;
+
+              case 10:
+                _context2.prev = 10;
+                _context2.t0 = _context2["catch"](0);
+                console.log("Ran into an error creating products :()");
+
+              case 13:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 10]]);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }()
+  );
+};
+var removeProduct = function removeProduct(id) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref5 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch) {
+        var _ref6, data;
+
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/allproducts/".concat(id));
+
+              case 3:
+                dispatch(deleteProduct(id));
+                _context3.next = 6;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/allproducts");
+
+              case 6:
+                _ref6 = _context3.sent;
+                data = _ref6.data;
+                dispatch(setProducts(data));
+                _context3.next = 14;
+                break;
+
+              case 11:
+                _context3.prev = 11;
+                _context3.t0 = _context3["catch"](0);
+                console.log("Oh noes, can't delete a product");
+
+              case 14:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 11]]);
+      }));
+
+      return function (_x3) {
+        return _ref5.apply(this, arguments);
+      };
+    }()
+  );
+};
 var initialState = [];
 function productsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -1238,6 +1425,14 @@ function productsReducer() {
   switch (action.type) {
     case SET_PRODUCTS:
       return action.products;
+
+    case ADD_PRODUCT:
+      return [].concat(_toConsumableArray(state), [action.products]);
+
+    case DELETE_PRODUCT:
+      return state.filter(function (product) {
+        return product.id !== action.productId;
+      });
 
     default:
       return state;
@@ -1250,21 +1445,15 @@ function productsReducer() {
 /*!***************************************!*\
   !*** ./client/store/singleProduct.js ***!
   \***************************************/
-/*! exports provided: fetchProduct, default */
+/*! exports provided: fetchSingleProduct, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProduct", function() { return fetchProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSingleProduct", function() { return fetchSingleProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return productReducer; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -1279,7 +1468,7 @@ var setProduct = function setProduct(productId) {
   };
 };
 
-var fetchProduct = function fetchProduct(id) {
+var fetchSingleProduct = function fetchSingleProduct(id) {
   return (
     /*#__PURE__*/
     function () {
@@ -1294,7 +1483,7 @@ var fetchProduct = function fetchProduct(id) {
               case 0:
                 _context.prev = 0;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/singleproduct/".concat(id));
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/singleproduct/".concat(id.productId));
 
               case 3:
                 _ref2 = _context.sent;
@@ -1306,7 +1495,7 @@ var fetchProduct = function fetchProduct(id) {
               case 8:
                 _context.prev = 8;
                 _context.t0 = _context["catch"](0);
-                console.error("Error fetching product from API.");
+                console.log("Error fetching product from API.");
 
               case 11:
               case "end":
@@ -1321,20 +1510,15 @@ var fetchProduct = function fetchProduct(id) {
       };
     }()
   );
-}; // we'll need to double check the initial state and reducer here because i'm not sure if this is written correctly
-
-var initialState = {
-  product: {}
 };
+var initialState = {};
 function productReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case SET_PRODUCT:
-      return _objectSpread({}, state, {
-        product: action.productId
-      });
+      return action.productId;
 
     default:
       return state;
@@ -1347,7 +1531,7 @@ function productReducer() {
 /*!******************************!*\
   !*** ./client/store/user.js ***!
   \******************************/
-/*! exports provided: me, auth, logout, default */
+/*! exports provided: me, auth, logout, addToUsers, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1355,9 +1539,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "me", function() { return me; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return auth; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addToUsers", function() { return addToUsers; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../history */ "./client/history.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -1370,6 +1563,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var GET_USER = 'GET_USER';
 var REMOVE_USER = 'REMOVE_USER';
+var ADD_USER = 'ADD_USER';
 /**
  * INITIAL STATE
  */
@@ -1389,6 +1583,13 @@ var getUser = function getUser(user) {
 var removeUser = function removeUser() {
   return {
     type: REMOVE_USER
+  };
+};
+
+var addUser = function addUser(user) {
+  return {
+    type: ADD_USER,
+    user: user
   };
 };
 /**
@@ -1530,6 +1731,51 @@ var logout = function logout() {
     }()
   );
 };
+var addToUsers = function addToUsers(user) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(dispatch) {
+        var _ref5, data;
+
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/users", user);
+
+              case 3:
+                _ref5 = _context4.sent;
+                data = _ref5.data;
+                // const {data} = await axios.get(`/api/users`)
+                // dispatch(getUser({data}))
+                dispatch(addUser(data));
+                _context4.next = 11;
+                break;
+
+              case 8:
+                _context4.prev = 8;
+                _context4.t0 = _context4["catch"](0);
+                console.error("Error adding user to our database.");
+
+              case 11:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 8]]);
+      }));
+
+      return function (_x4) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
+};
 /**
  * REDUCER
  */
@@ -1544,6 +1790,9 @@ var logout = function logout() {
 
     case REMOVE_USER:
       return defaultUser;
+
+    case ADD_USER:
+      return [].concat(_toConsumableArray(state), [action.user]);
 
     default:
       return state;
