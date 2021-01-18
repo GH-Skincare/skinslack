@@ -111,7 +111,8 @@ form div {
   text-align: center;
 }
 
-.all-products-list-container ul {
+.all-products-list-container ul,
+.admin-view-container ul {
   padding: 0;
   padding-left: 10px;
   margin: 0px;
@@ -159,4 +160,15 @@ form div {
   color: #ffffff;
   background-color: #b96f6f;
   border: 1px solid #ffffff;
+}
+
+/* admin view */
+.admin-view-container ul li {
+  width: 350px;
+  height: 250px;
+  background-color: #e6cccc;
+  float: left;
+  margin: 30px;
+  padding: 5px;
+  word-wrap: break-word;
 }

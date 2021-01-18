@@ -9,7 +9,7 @@
 import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
-// import {Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 class adminView extends React.Component {
   componentDidMount() {
@@ -26,13 +26,10 @@ class adminView extends React.Component {
               <div className="all-products" key={product.id}>
                 <li className="product-stats">
                   <p className="product-name">{product.name}</p>
-                  <p className="product-image">{product.imageUrl}</p>
-                  <p className="product-summary">{product.summary}</p>
                   <p className="product-price">{product.price}</p>
-                  <br />
-                  <p>
-                    <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
-                  </p>
+                  <Button className="delete-product" type="submit">
+                    Delete Product
+                  </Button>
                 </li>
               </div>
             ))}
