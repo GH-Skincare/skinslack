@@ -11,7 +11,7 @@ const Navigationbar = ({handleClick, isLoggedIn}) => (
   <div>
     <Navbar className="nav-bar" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand className="brand-name" href="/home">
-        JIL SkinCare
+        JIL Skincare
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
