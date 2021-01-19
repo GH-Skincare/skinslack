@@ -1,5 +1,5 @@
 const allProductsRouter = require('express').Router()
-const {Product} = require('../db/models')
+const {Product, OrderItem} = require('../db/models')
 
 allProductsRouter.get('/', async (req, res, next) => {
   try {
@@ -40,6 +40,11 @@ allProductsRouter.put('/:productId', async (req, res, next) => {
 
 allProductsRouter.delete('/:productId', async (req, res, next) => {
   try {
+    await OrderItem.destroy({
+      where: {
+        productId: req.params.productId
+      }
+    })
     await Product.destroy({
       where: {
         id: req.params.productId

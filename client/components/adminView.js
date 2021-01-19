@@ -12,11 +12,7 @@ import {connect} from 'react-redux'
 import {Button, Form, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'
-import {
-  createProduct,
-  removeProduct,
-  updateSingleProduct
-} from '../store/adminview'
+import {removeProduct} from '../store/products'
 
 class adminView extends React.Component {
   constructor(props) {
@@ -93,6 +89,13 @@ class adminView extends React.Component {
                   <p className="product-name">{product.name}</p>
                   <p className="product-price">{product.price}</p>
                   <br />
+                  <Button
+                    className="add-cart"
+                    type="submit"
+                    onClick={() => this.props.clickDeleteProduct(product.id)}
+                  >
+                    REMOVE 🛍
+                  </Button>
                 </li>
               </div>
             ))}
@@ -112,7 +115,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    loadProducts: () => dispatch(fetchProducts())
+    loadProducts: () => dispatch(fetchProducts()),
+    clickDeleteProduct: productId => dispatch(removeProduct(productId))
     // addToProducts: (product) => dispatch(createProduct(product)),
     // updateProductInfo: (id, product) => dispatch(updateSingleProduct(id, product))
   }
