@@ -8,6 +8,7 @@ import {
   deleteOrderItem
 } from '../store/orders'
 import Counter from '../components/Counter'
+import {Link} from 'react-router-dom'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -44,7 +45,9 @@ class AllProducts extends React.Component {
               return (
                 <div className="all-products" key={product.id}>
                   <li className="product-stats">
-                    <p className="product-name">{product.name}</p>
+                    <Link to={`/singleproduct/${product.id}`}>
+                      <p className="product-name">{product.name}</p>
+                    </Link>
                     <img
                       src={product.imageUrl}
                       style={{width: '25%', margin: '20px 0'}}
