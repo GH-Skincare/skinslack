@@ -44,7 +44,7 @@ export const fetchActiveOrder = userId => async dispatch => {
     const {data} = await axios.get(`/api/orders/users/${userId}/type/active`)
     dispatch(setOrder(data))
   } catch (error) {
-    console.log('oh no, error!')
+    console.log('oh no, error!', error)
   }
 }
 

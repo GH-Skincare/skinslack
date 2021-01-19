@@ -8,6 +8,7 @@ import {
   deleteOrderItem
 } from '../store/orders'
 import {Link} from 'react-router-dom'
+import {me} from '../store'
 import SelectNum from '../components/SelectNum'
 
 class AllProducts extends React.Component {
@@ -15,9 +16,10 @@ class AllProducts extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.loadProducts()
-    this.props.loadActiveOrder(this.props.userId)
+  async componentDidMount() {
+    await this.props.loadInitialData()
+    await this.props.loadProducts()
+    await this.props.loadActiveOrder(this.props.userId)
   }
 
   render() {
@@ -109,6 +111,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
+    loadInitialData: () => dispatch(me()),
     loadProducts: () => dispatch(fetchProducts()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
     addToCart: (userId, productId) =>
