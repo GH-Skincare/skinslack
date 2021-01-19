@@ -7,7 +7,6 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
-// import Counter from './Counter'
 import SelectNum from './SelectNum'
 import {Link} from 'react-router-dom'
 
@@ -59,7 +58,6 @@ class AllProducts extends React.Component {
                       <div>
                         {/* <div>Quantity: {orderItem.quantity}</div> */}
                         <div className="add-remove-products">
-                          {/* <Counter component={Counter} /> */}
                           <Button
                             className="add-cart"
                             type="submit"
@@ -86,7 +84,6 @@ class AllProducts extends React.Component {
                         </Button>
                       </div>
                     )}
-                    <br />
                     <p>
                       <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
                     </p>
