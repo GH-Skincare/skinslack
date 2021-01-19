@@ -7,9 +7,9 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
-import Counter from './Counter'
 import {Link} from 'react-router-dom'
 import {me} from '../store'
+import SelectNum from '../components/SelectNum'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -60,7 +60,6 @@ class AllProducts extends React.Component {
                       <div>
                         {/* <div>Quantity: {orderItem.quantity}</div> */}
                         <div className="add-remove-products">
-                          <Counter component={Counter} />
                           <Button
                             className="add-cart"
                             type="submit"
@@ -73,15 +72,19 @@ class AllProducts extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <Button
-                        className="add-cart"
-                        type="submit"
-                        onClick={() =>
-                          this.props.addToCart(this.props.userId, product.id)
-                        }
-                      >
-                        Add to Bag 🛍
-                      </Button>
+                      <div>
+                        <SelectNum component={SelectNum} />
+                        <br />
+                        <Button
+                          className="add-cart"
+                          type="submit"
+                          onClick={() =>
+                            this.props.addToCart(this.props.userId, product.id)
+                          }
+                        >
+                          Add to Bag 🛍
+                        </Button>
+                      </div>
                     )}
                     <br />
                     <p>
