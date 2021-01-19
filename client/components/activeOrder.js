@@ -32,8 +32,10 @@ class ActiveOrder extends React.Component {
               <div className="all-products" key={orderItem.id}>
                 <li className="product-stats">
                   <p className="product-name">{orderItem.product.name}</p>
-                  <p className="product-image">{orderItem.product.imageUrl}</p>
-                  {/* <p className="product-summary">{orderItem.product.summary}</p> */}
+                  <img
+                    src={orderItem.product.imageUrl}
+                    style={{width: '25%', margin: '20px 0'}}
+                  />
                   <p className="product-price">{orderItem.product.price}</p>
                   <p className="product-price">
                     Quantity: {orderItem.quantity}
