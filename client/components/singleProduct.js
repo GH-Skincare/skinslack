@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
+import Counter from '../components/Counter'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
@@ -24,6 +25,7 @@ export class SingleProduct extends React.Component {
             style={{width: '25%', margin: '20px 0'}}
           />
           <p>{product.description}</p>
+          <Counter component={Counter} />
           <Button className="add-cart" type="submit">
             Add to Bag 🛍
           </Button>
