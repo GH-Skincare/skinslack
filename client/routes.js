@@ -40,7 +40,17 @@ class Routes extends Component {
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        {/* guest view access below */}
+        <Switch>
+          <Route exact path="/allproducts" component={AllProducts} />
+          <Route
+            exact
+            path="/singleproduct/:productId"
+            component={SingleProduct}
+          />
+          <Route exact path="/cart" component={ActiveOrder} />
+          <Route component={Login} />
+        </Switch>
       </Switch>
     )
   }
