@@ -45,7 +45,10 @@ class AllProducts extends React.Component {
                 <div className="all-products" key={product.id}>
                   <li className="product-stats">
                     <p className="product-name">{product.name}</p>
-                    <p className="product-image">{product.imageUrl}</p>
+                    <img
+                      src={product.imageUrl}
+                      style={{width: '25%', margin: '20px 0'}}
+                    />
                     <p className="product-summary">{product.summary}</p>
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
