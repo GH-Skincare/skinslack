@@ -121,7 +121,7 @@ form div {
 
 .all-products-list-container ul li {
   width: 350px;
-  height: 400px;
+  height: 500px;
   background-color: #e6cccc;
   float: left;
   margin: 30px;
@@ -197,6 +197,19 @@ form div {
   padding: 0.25em 0.8em;
 }
 
+/* single product view */
+
+.singleproducts-container {
+  text-align: center;
+  margin: auto;
+  width: 500px;
+  height: 600px;
+  background-color: #e6cccc;
+  padding: 5px;
+  padding-top: 30px;
+  word-wrap: break-word;
+}
+
 /* counter-button view */
 
 .counter-buttons {
@@ -213,4 +226,8 @@ form div {
 
 .count-num {
   font-size: 18px;
+}
+
+.product-quantity {
+  font-size: 16px;
 }

@@ -7,6 +7,7 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
+import Counter from '../components/Counter'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -44,21 +45,27 @@ class AllProducts extends React.Component {
                 <div className="all-products" key={product.id}>
                   <li className="product-stats">
                     <p className="product-name">{product.name}</p>
-                    <p className="product-image">{product.imageUrl}</p>
+                    <img
+                      src={product.imageUrl}
+                      style={{width: '25%', margin: '20px 0'}}
+                    />
                     <p className="product-summary">{product.summary}</p>
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
                       <div>
-                        <div>Quantity: {orderItem.quantity}</div>
-                        <Button
-                          className="add-cart"
-                          type="submit"
-                          onClick={() =>
-                            this.props.clickDeleteOrderItem(orderItem.id)
-                          }
-                        >
-                          REMOVE 🛍
-                        </Button>{' '}
+                        {/* <div>Quantity: {orderItem.quantity}</div> */}
+                        <div className="add-remove-products">
+                          <Counter component={Counter} />
+                          <Button
+                            className="add-cart"
+                            type="submit"
+                            onClick={() =>
+                              this.props.clickDeleteOrderItem(orderItem.id)
+                            }
+                          >
+                            REMOVE 🛍
+                          </Button>{' '}
+                        </div>
                       </div>
                     ) : (
                       <Button
@@ -71,7 +78,6 @@ class AllProducts extends React.Component {
                         Add to Bag 🛍
                       </Button>
                     )}
-
                     <br />
                     <p>
                       <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
