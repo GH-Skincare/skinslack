@@ -2,15 +2,16 @@ import React from 'react'
 // import {connect} from 'react-redux'
 
 class SelectNum extends React.Component {
-  changeQuant() {}
+  // changeQuant() {}
 
   render() {
     return (
       <div>
         <form>
-          <h1>Quantity:</h1>
+          <small>Quantity:</small>
+          <br />
           <fieldset>
-            <select id="selQuant">
+            <select id="selectQuant">
               <option value="zero">0</option>
               <option value="one">1</option>
               <option value="two">2</option>
@@ -23,7 +24,8 @@ class SelectNum extends React.Component {
               <option value="nine">9</option>
               <option value="ten">10</option>
             </select>
-            <input type="button" value="Update" onClick={changeQuant} />
+            <input type="button" value="Update" />
+            {/* <input type="button" value="Update" onClick={changeQuant} /> */}
           </fieldset>
         </form>
       </div>

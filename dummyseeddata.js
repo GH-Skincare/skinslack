@@ -5,7 +5,7 @@ const productData = [
     summary: 'Your skin will feel new, almost like in your wildest dreams!',
     description:
       'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-    imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
+    imageUrl: 'https://miro.medium.com/max/1400/1*8C40nF4NTgSYNZOAzpOi-g.jpeg',
     price: '$24.99',
     inventory: 1
   },
@@ -15,7 +15,7 @@ const productData = [
     summary: 'Lip care is part of Skincare!',
     description:
       'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.',
-    imageUrl: 'http://dummyimage.com/235x205.bmp/ff4444/ffffff',
+    imageUrl: 'http://dummyimage.com/197x249.png/dddddd/000000',
     price: '$12.99',
     inventory: 2
   },

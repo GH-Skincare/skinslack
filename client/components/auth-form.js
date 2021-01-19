@@ -12,6 +12,7 @@ const AuthForm = props => {
 
   return (
     <div className="auth">
+      <h1>Welcome to JIL Skincare!</h1>
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="email">Email</label>
@@ -33,11 +34,7 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      {/* <img src={intro} alt="welcome-image" /> */}
-      {/* may be able to add a nice intro video-ad here if we have time by using code below */}
-      {/* <div className="embed-responsive embed-responsive-16by9">
-          <iframe className="embed-responsive-item" src=""></iframe>
-        </div> */}
+      <img src="https://www.foreo.com/mysa/wp-content/uploads/sites/2/2017/07/skincare_cover-min-850x477.jpg" />
     </div>
   )
 }

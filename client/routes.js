@@ -4,7 +4,7 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
-import AllProducts from './components/allproducts'
+import AllProducts from './components/AllProducts'
 import SingleProduct from './components/singleProduct'
 import ActiveOrder from './components/activeOrder'
 import AdminView from './components/adminView'
@@ -40,7 +40,17 @@ class Routes extends Component {
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        {/* guest view access below */}
+        <Switch>
+          <Route exact path="/allproducts" component={AllProducts} />
+          <Route
+            exact
+            path="/singleproduct/:productId"
+            component={SingleProduct}
+          />
+          <Route exact path="/cart" component={ActiveOrder} />
+          <Route component={Login} />
+        </Switch>
       </Switch>
     )
   }

@@ -2,11 +2,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
+import {fetchActiveOrder, createOrderItem} from '../store/orders'
+import Counter from '../components/Counter'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
     try {
       await this.props.loadSingleProduct(this.props.match.params)
+      await this.props.loadActiveOrder(this.props.userId)
     } catch (error) {
       console.log(`There was an error while trying to fetch product details!`)
     }
@@ -15,23 +18,34 @@ export class SingleProduct extends React.Component {
   render() {
     const product = this.props.product || {}
     return (
-      <div className="singleproducts-container">
-        <center>
-          <h3>{product.name}</h3>
-          <p>{product.price}</p>
-          <img
-            src={product.imageUrl}
-            style={{width: '25%', margin: '20px 0'}}
-          />
-          <p>{product.description}</p>
-          <Button className="add-cart" type="submit">
-            Add to Bag 🛍
-          </Button>
-          <br />
-          <p>
-            <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
-          </p>
-        </center>
+      <div>
+        <div className="singleproducts-container">
+          <center>
+            <h3>{product.name}</h3>
+            <p>{product.price}</p>
+            <img
+              src={product.imageUrl}
+              style={{width: '25%', margin: '20px 0'}}
+            />
+            <p>{product.description}</p>
+            <div className="add-remove-products">
+              <Counter component={Counter} />
+              <Button
+                className="add-cart"
+                type="submit"
+                onClick={() =>
+                  this.props.addToCart(this.props.userId, product.id)
+                }
+              >
+                Add to Bag 🛍
+              </Button>
+              <br />
+              <p>
+                <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
+              </p>
+            </div>
+          </center>
+        </div>
       </div>
     )
   }
@@ -39,11 +53,15 @@ export class SingleProduct extends React.Component {
 
 //this will be helpful for redux later:
 const mapState = state => ({
-  product: state.product
+  product: state.product,
+  activeOrder: state.orders.activeOrder,
+  userId: state.user.id
 })
 
 const mapDispatch = dispatch => ({
-  loadSingleProduct: id => dispatch(fetchSingleProduct(id))
+  loadSingleProduct: id => dispatch(fetchSingleProduct(id)),
+  loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
+  addToCart: (userId, productId) => dispatch(createOrderItem(userId, productId))
 })
 
 export default connect(mapState, mapDispatch)(SingleProduct)
