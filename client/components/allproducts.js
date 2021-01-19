@@ -60,8 +60,6 @@ class AllProducts extends React.Component {
                         {/* <div>Quantity: {orderItem.quantity}</div> */}
                         <div className="add-remove-products">
                           {/* <Counter component={Counter} /> */}
-                          <SelectNum component={SelectNum} />
-                          <br />
                           <Button
                             className="add-cart"
                             type="submit"
@@ -74,15 +72,19 @@ class AllProducts extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <Button
-                        className="add-cart"
-                        type="submit"
-                        onClick={() =>
-                          this.props.addToCart(this.props.userId, product.id)
-                        }
-                      >
-                        Add to Bag 🛍
-                      </Button>
+                      <div>
+                        <SelectNum component={SelectNum} />
+                        <br />
+                        <Button
+                          className="add-cart"
+                          type="submit"
+                          onClick={() =>
+                            this.props.addToCart(this.props.userId, product.id)
+                          }
+                        >
+                          Add to Bag 🛍
+                        </Button>
+                      </div>
                     )}
                     <br />
                     <p>
