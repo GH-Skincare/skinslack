@@ -197,6 +197,19 @@ form div {
   padding: 0.25em 0.8em;
 }
 
+/* single product view */
+
+.singleproducts-container {
+  text-align: center;
+  margin: auto;
+  width: 500px;
+  height: 600px;
+  background-color: #e6cccc;
+  padding: 5px;
+  padding-top: 30px;
+  word-wrap: break-word;
+}
+
 /* counter-button view */
 
 .counter-buttons {
