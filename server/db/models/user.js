@@ -2,6 +2,9 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// incorporate a boolean-isAdmin: true or false
+//if not admin, do not allow access to certain items
+
 const User = db.define('user', {
   firstName: {
     type: Sequelize.STRING,
