@@ -1,13 +1,8 @@
 import axios from 'axios'
 
-const SET_PRODUCTS = 'SET_PRODUCTS'
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
-
-export const setProducts = products => ({
-  type: SET_PRODUCTS,
-  products
-})
+const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
 export const addProduct = product => ({
   type: ADD_PRODUCT,
@@ -19,14 +14,10 @@ export const deleteProduct = id => ({
   id
 })
 
-export const fetchProducts = () => async dispatch => {
-  try {
-    const {data} = await axios.get('/api/allproducts')
-    dispatch(setProducts(data))
-  } catch (error) {
-    console.log(`Error fetching products from our API :(`)
-  }
-}
+export const updateProduct = id => ({
+  type: UPDATE_PRODUCT,
+  id
+})
 
 export const createProduct = product => async dispatch => {
   try {
@@ -49,14 +40,33 @@ export const removeProduct = id => async dispatch => {
   }
 }
 
-const initialState = []
+export const updateSingleProduct = (id, product) => {
+  return async dispatch => {
+    try {
+      await axios.put(`/api/singleproduct/${id}`, product)
+      dispatch(updateProduct(product))
 
-export default function productsReducer(state = initialState, action) {
+      const {data} = axios.get(`/api/singleproduct/${id}`)
+      dispatch(setProduct(data))
+    } catch (error) {
+      console.log(`Error updating product`)
+    }
+  }
+}
+
+const initialState = {
+  products: [],
+  product: {}
+}
+
+export default function adminReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_PRODUCTS:
-      return action.products
+    case SET_PRODUCT:
+      return {...state, product: action.productId}
+    case UPDATE_PRODUCT:
+      return {...state, product: action.productId}
     case ADD_PRODUCT:
-      return [...state, action.products]
+      return [...state, action.product]
     case DELETE_PRODUCT:
       return state.filter(product => {
         return product.id !== action.productId

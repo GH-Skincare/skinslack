@@ -7,24 +7,21 @@ const setProduct = productId => ({
   productId
 })
 
-export const fetchProduct = id => async dispatch => {
+export const fetchSingleProduct = id => async dispatch => {
   try {
-    const {data} = await axios.get(`/api/singleproduct/${id}`)
+    const {data} = await axios.get(`/api/singleproduct/${id.productId}`)
     dispatch(setProduct(data))
   } catch (error) {
-    console.error(`Error fetching product from API.`)
+    console.log(`Error fetching product from API.`)
   }
 }
 
-// we'll need to double check the initial state and reducer here because i'm not sure if this is written correctly
-const initialState = {
-  product: {}
-}
+const initialState = {}
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCT:
-      return {...state, product: action.productId}
+      return action.productId
     default:
       return state
   }

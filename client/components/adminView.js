@@ -12,11 +12,28 @@ import {connect} from 'react-redux'
 import {Button, Form, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'
+import {
+  createProduct,
+  removeProduct,
+  updateSingleProduct
+} from '../store/adminview'
 
 class adminView extends React.Component {
+  constructor(props) {
+    super(props)
+    // this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
   componentDidMount() {
     this.props.loadProducts()
+    // this.props.updateProductInfo()
   }
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //   const product = e.target.id
+  //   console.log(product, `<---- adminviewproduct`)
+  //   this.props.addToProducts({ product: this.product })
+  // }
 
   render() {
     return (
@@ -24,32 +41,32 @@ class adminView extends React.Component {
         <h1 className="admin-view-headline">Admin View</h1>
         <Form>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group as={Col}>
               <Form.Label>Product Name</Form.Label>
               <Form.Control type="text" placeholder="Product Name" />
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group as={Col}>
               <Form.Label>Product Summary</Form.Label>
               <Form.Control type="text" placeholder="Summary" />
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group as={Col}>
               <Form.Label>Product Description</Form.Label>
               <Form.Control type="text" placeholder="Description" />
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridCity">
+            <Form.Group as={Col}>
               <Form.Label>Price</Form.Label>
               <Form.Control type="integer" placeholder="Price" />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridCity">
+            <Form.Group as={Col}>
               <Form.Label>Image Url</Form.Label>
               <Form.Control type="text" placeholder="Image Url" />
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridZip">
+            <Form.Group as={Col}>
               <Form.Label>Inventory to Add</Form.Label>
               <Form.Control
                 type="integer"
@@ -60,6 +77,9 @@ class adminView extends React.Component {
               className="create-product"
               variant="secondary"
               type="submit"
+              onClick={() => {
+                this.props.addToProducts(this.props.product)
+              }}
             >
               Add Product
             </Button>
@@ -72,42 +92,7 @@ class adminView extends React.Component {
                 <li className="product-stats">
                   <p className="product-name">{product.name}</p>
                   <p className="product-price">{product.price}</p>
-                  <div className="input-group plus-minus-input">
-                    <div className="input-group-button">
-                      <button
-                        type="button"
-                        className="button hollow circle"
-                        data-quantity="minus"
-                        data-field="quantity"
-                      >
-                        <FontAwesomeIcon icon={faMinus} />
-                      </button>
-                    </div>
-                    <input
-                      className="input-group-field"
-                      type="number"
-                      name="quantity"
-                      value="0"
-                    />
-                    <div className="input-group-button">
-                      <button
-                        type="button"
-                        className="button hollow circle"
-                        data-quantity="plus"
-                        data-field="quantity"
-                      >
-                        <FontAwesomeIcon icon={faPlus} />
-                      </button>
-                    </div>
-                  </div>
                   <br />
-                  <Button
-                    variant="secondary"
-                    className="delete-product"
-                    type="submit"
-                  >
-                    Delete Product
-                  </Button>
                 </li>
               </div>
             ))}
@@ -120,13 +105,16 @@ class adminView extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.products
+    products: state.products,
+    product: state.product
   }
 }
 
 const mapDispatch = dispatch => {
   return {
     loadProducts: () => dispatch(fetchProducts())
+    // addToProducts: (product) => dispatch(createProduct(product)),
+    // updateProductInfo: (id, product) => dispatch(updateSingleProduct(id, product))
   }
 }
 
