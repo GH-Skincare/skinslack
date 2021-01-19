@@ -4,6 +4,12 @@ export const GOT_ORDER = 'GOT_ORDER'
 export const UPDATE_ORDER = 'UPDATE_ORDER'
 export const GOT_INACTIVE_ORDERS = 'GOT_INACTIVE_ORDERS'
 export const NEW_ORDER_ITEM = 'NEW_ORDER_ITEM'
+export const REMOVE_ORDER_ITEM = 'REMOVE_ORDER_ITEM'
+
+export const removeOrderItem = orderItemId => ({
+  type: REMOVE_ORDER_ITEM,
+  payload: orderItemId
+})
 
 export const newOrderItem = order => ({
   type: NEW_ORDER_ITEM,
@@ -23,6 +29,15 @@ export const setInactiveOrders = orders => ({
 export const updateOrder = () => ({
   type: UPDATE_ORDER
 })
+
+export const deleteOrderItem = orderItemId => async dispatch => {
+  try {
+    await axios.delete(`/api/order_items/${orderItemId}`)
+    dispatch(removeOrderItem(orderItemId))
+  } catch (error) {
+    console.log('oh no, error!')
+  }
+}
 
 export const fetchActiveOrder = userId => async dispatch => {
   try {
@@ -79,6 +94,16 @@ export const ordersReducer = (state = initialState, action) => {
       return {
         activeOrder: {},
         inactiveOrders: [...state.inactiveOrders, state.activeOrder]
+      }
+    case REMOVE_ORDER_ITEM:
+      return {
+        ...state,
+        activeOrder: {
+          ...state.activeOrder,
+          orderItems: state.activeOrder.orderItems.filter(orderItem => {
+            return orderItem.id !== action.payload
+          })
+        }
       }
     case GOT_INACTIVE_ORDERS:
       return {...state, inactiveOrders: action.payload}
