@@ -2,7 +2,11 @@ import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'
-import {fetchActiveOrder, createOrderItem} from '../store/orders'
+import {
+  fetchActiveOrder,
+  createOrderItem,
+  deleteOrderItem
+} from '../store/orders'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -44,7 +48,18 @@ class AllProducts extends React.Component {
                     <p className="product-summary">{product.summary}</p>
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
-                      <div>Quantity: {orderItem.quantity}</div>
+                      <div>
+                        <div>Quantity: {orderItem.quantity}</div>
+                        <Button
+                          className="add-cart"
+                          type="submit"
+                          onClick={() =>
+                            this.props.clickDeleteOrderItem(orderItem.id)
+                          }
+                        >
+                          REMOVE 🛍
+                        </Button>{' '}
+                      </div>
                     ) : (
                       <Button
                         className="add-cart"
@@ -85,7 +100,8 @@ const mapDispatch = dispatch => {
     loadProducts: () => dispatch(fetchProducts()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
     addToCart: (userId, productId) =>
-      dispatch(createOrderItem(userId, productId))
+      dispatch(createOrderItem(userId, productId)),
+    clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
   }
 }
 
