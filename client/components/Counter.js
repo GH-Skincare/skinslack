@@ -1,6 +1,3 @@
-//create a counter component here
-//use this counter component in all products view, single product and admin view
-
 import React from 'react'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'

@@ -1,6 +1,3 @@
-// const INCREMENT = 'INCREMENT';
-// const DECREMENT = 'DECREMENT';
-
 const initialState = {
   count: 0
 }
