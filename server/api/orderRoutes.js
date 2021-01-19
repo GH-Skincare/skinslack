@@ -1,7 +1,19 @@
 const orderRouter = require('express').Router()
 const {Order, OrderItem, Product} = require('../db/models')
 
-orderRouter.get('/users/:userId/type/:type', async function(req, res, next) {
+const isAllowed = (req, res, next) => {
+  if (req.user === undefined || String(req.user.id) !== req.params.userId) {
+    res.send(403)
+  } else {
+    next()
+  }
+}
+
+orderRouter.get('/users/:userId/type/:type', isAllowed, async function(
+  req,
+  res,
+  next
+) {
   try {
     let isActive
     if (req.params.type === 'active') {

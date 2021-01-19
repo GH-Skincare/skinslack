@@ -20,8 +20,8 @@ class adminView extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount() {
-    this.props.loadProducts()
+  async componentDidMount() {
+    await this.props.loadProducts()
     // this.props.updateProductInfo()
   }
   // handleSubmit(e) {

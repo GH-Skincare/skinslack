@@ -2,14 +2,16 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, deleteOrderItem} from '../store/orders'
+import {me} from '../store'
 
 class ActiveOrder extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.loadActiveOrder(this.props.userId)
+  async componentDidMount() {
+    await this.props.loadInitialData()
+    await this.props.loadActiveOrder(this.props.userId)
   }
 
   render() {
@@ -76,6 +78,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
+    loadInitialData: () => dispatch(me()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
     clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
   }
