@@ -7,6 +7,7 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
+import Counter from '../components/Counter'
 
 class AllProducts extends React.Component {
   constructor(props) {
@@ -49,16 +50,19 @@ class AllProducts extends React.Component {
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
                       <div>
-                        <div>Quantity: {orderItem.quantity}</div>
-                        <Button
-                          className="add-cart"
-                          type="submit"
-                          onClick={() =>
-                            this.props.clickDeleteOrderItem(orderItem.id)
-                          }
-                        >
-                          REMOVE 🛍
-                        </Button>{' '}
+                        {/* <div>Quantity: {orderItem.quantity}</div> */}
+                        <div className="add-remove-products">
+                          <Counter component={Counter} />
+                          <Button
+                            className="add-cart"
+                            type="submit"
+                            onClick={() =>
+                              this.props.clickDeleteOrderItem(orderItem.id)
+                            }
+                          >
+                            REMOVE 🛍
+                          </Button>{' '}
+                        </div>
                       </div>
                     ) : (
                       <Button
@@ -71,7 +75,6 @@ class AllProducts extends React.Component {
                         Add to Bag 🛍
                       </Button>
                     )}
-
                     <br />
                     <p>
                       <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
