@@ -196,3 +196,21 @@ form div {
   border-radius: 50%;
   padding: 0.25em 0.8em;
 }
+
+/* counter-button view */
+
+.counter-buttons {
+  background-color: #ffffff;
+  color: #b96f6f;
+  border: #b96f6f;
+  margin: 10px;
+}
+
+.counter-buttons:hover {
+  background-color: #c48484;
+  color: #ffffff;
+}
+
+.count-num {
+  font-size: 18px;
+}

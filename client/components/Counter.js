@@ -3,6 +3,7 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
+import {Button} from 'react-bootstrap'
 
 class Counter extends React.Component {
   increment = () => {
@@ -17,16 +18,25 @@ class Counter extends React.Component {
     console.log('what is this.props:', this.props.count)
     return (
       <div>
-        <h2>Counter</h2>
-        <br />
+        <h2 className="product-quantity">Quantity</h2>
         <div>
-          <button type="submit" onClick={this.decrement}>
+          <Button
+            className="counter-buttons"
+            variant="outline-info"
+            type="submit"
+            onClick={this.decrement}
+          >
             -
-          </button>
-          <span>{this.props.count}</span>
-          <button type="submit" onClick={this.increment}>
+          </Button>
+          <span className="count-num">{this.props.count}</span>
+          <Button
+            className="counter-buttons"
+            variant="outline-info"
+            type="submit"
+            onClick={this.increment}
+          >
             +
-          </button>
+          </Button>
         </div>
       </div>
     )
