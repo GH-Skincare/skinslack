@@ -7,9 +7,8 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
-import SelectNum from './SelectNum'
-import {Link} from 'react-router-dom'
 import Counter from './Counter'
+import {Link} from 'react-router-dom'
 
 class AllProducts extends React.Component {
   constructor(props) {
