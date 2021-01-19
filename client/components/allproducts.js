@@ -84,6 +84,7 @@ class AllProducts extends React.Component {
                         </Button>
                       </div>
                     )}
+                    <br />
                     <p>
                       <span>⭐️ ⭐ ⭐️ ⭐️ ⭐️ </span>
                     </p>
