@@ -9,6 +9,8 @@ orderRouter.get('/users/:userId/type/:type', async function(req, res, next) {
     } else {
       isActive = false
     }
+    //confirm person logged in matches the userid we are looking up
+    //use the testing function as middleware inside the '' in the get route
     const orders = await Order.findAll({
       where: {isActive: isActive, userId: req.params.userId},
       // eager loading- we want to load orderItems and products
