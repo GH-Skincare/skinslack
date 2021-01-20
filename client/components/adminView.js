@@ -138,6 +138,13 @@ class adminView extends React.Component {
                   <p className="product-name">{product.name}</p>
                   <p className="product-price">{product.price}</p>
                   <br />
+                  <Button
+                    className="add-cart"
+                    type="submit"
+                    onClick={() => this.props.clickDeleteProduct(product.id)}
+                  >
+                    REMOVE 🛍
+                  </Button>
                 </li>
               </div>
             ))}
