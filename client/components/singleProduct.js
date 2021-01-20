@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, createOrderItem} from '../store/orders'
-import SelectNum from '../components/SelectNum'
 import Counter from '../components/Counter'
+import {Link} from 'react-router-dom'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
@@ -23,7 +23,9 @@ export class SingleProduct extends React.Component {
       <div>
         <div className="singleproducts-container">
           <center>
-            <h3>{product.name}</h3>
+            <Link to="/allproducts">
+              <h3 className="product-name">{product.name}</h3>
+            </Link>
             <p>{product.price}</p>
             <img
               src={product.imageUrl}
