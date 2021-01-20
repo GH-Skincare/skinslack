@@ -122,7 +122,9 @@ form div {
 .all-products-list-container ul li {
   width: 350px;
   height: 575px;
-  background-color: #e6cccc;
+  cursor: pointer;
+  /* background-color: #e6cccc; */
+  background-color: #b96f6f;
   float: left;
   margin: 30px;
   padding: 5px;
@@ -139,14 +141,18 @@ form div {
 .product-name {
   font-size: 32px;
   font-weight: bold;
+  color: #addfad;
 }
 
 .product-summary {
   font-size: 18px;
   font-style: normal;
+  font-weight: bold;
+  color: #addfad;
 }
 .product-price {
   font-size: 32px;
+  color: #ffffff;
 }
 
 .add-cart {
@@ -202,9 +208,11 @@ form div {
 .singleproducts-container {
   text-align: center;
   margin: auto;
-  width: 500px;
-  height: 600px;
-  background-color: #e6cccc;
+  width: 470px;
+  height: 520px;
+  /* background-color: #e6cccc; */
+  background-color: #b96f6f;
+  color: #addfad;
   padding: 5px;
   padding-top: 30px;
   word-wrap: break-word;
@@ -230,4 +238,18 @@ form div {
 
 .product-quantity {
   font-size: 16px;
+}
+
+small {
+  color: #ffffff;
+}
+
+.note-to-cust-empty {
+  text-align: center;
+  font-size: 24px;
+  color: green;
+}
+
+.great-taste-note {
+  color: #addfad;
 }
