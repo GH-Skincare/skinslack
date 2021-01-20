@@ -77,7 +77,11 @@ class AllProducts extends React.Component {
                       style={{width: '25%', margin: '20px 0'}}
                     />
                     <p className="product-summary">{product.summary}</p>
-                    <p className="product-price">{product.price}</p>
+                    {product.price.includes('$') ? (
+                      <p className="product-price">{product.price}</p>
+                    ) : (
+                      <p className="product-price">${product.price}</p>
+                    )}
                     {orderItem !== null ? (
                       <div>
                         <div className="add-remove-products">

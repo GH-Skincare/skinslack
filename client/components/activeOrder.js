@@ -36,7 +36,13 @@ class ActiveOrder extends React.Component {
       !this.props.activeOrder.orderItems ||
       this.props.activeOrder.orderItems.length === 0
     ) {
-      return <div> Cart Empty </div>
+      return (
+        <div className="note-to-cust-empty">
+          {' '}
+          Cart is currently empty. Please take a look at our products to find
+          something you love!{' '}
+        </div>
+      )
     }
 
     return (
@@ -59,10 +65,12 @@ class ActiveOrder extends React.Component {
                   <p className="product-price">
                     Quantity: {orderItem.quantity}
                   </p>
-                  <div>
+                  <div className="great-taste-note">
                     {' '}
                     Thanks for adding to your bag! You have Great taste!{' '}
                   </div>
+                  <br />
+                  <br />
                   <Button
                     className="add-cart"
                     type="submit"
