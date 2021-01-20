@@ -38,7 +38,8 @@ orderItemsRouter.post('/', async function(req, res, next) {
     //do an item look-up to see if item is already in the active order (cart)
     let itemLookUp = await OrderItem.findAll({
       where: {
-        productId: req.body.productId
+        productId: req.body.productId,
+        orderId: order.id
       }
     })
 

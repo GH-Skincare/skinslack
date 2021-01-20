@@ -9,7 +9,7 @@ import {
 } from '../store/orders'
 import {Link} from 'react-router-dom'
 import {me} from '../store'
-import SelectNum from '../components/SelectNum'
+import SelectNum from './SelectNum'
 
 class AllProducts extends React.Component {
   constructor(props) {
