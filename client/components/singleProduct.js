@@ -25,7 +25,13 @@ export class SingleProduct extends React.Component {
             <Link to="/allproducts">
               <h3>{product.name}</h3>
             </Link>
-            <p>{product.price}</p>
+            {typeof product.price !== 'string' ? null : product.price.includes(
+              '$'
+            ) ? (
+              <p className="product-price">{product.price}</p>
+            ) : (
+              <p className="product-price">${product.price}</p>
+            )}
             <img
               src={product.imageUrl}
               style={{width: '25%', margin: '20px 0'}}
