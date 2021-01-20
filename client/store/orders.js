@@ -44,7 +44,7 @@ export const fetchActiveOrder = userId => async dispatch => {
     const {data} = await axios.get(`/api/orders/users/${userId}/type/active`)
     dispatch(setOrder(data))
   } catch (error) {
-    console.log('oh no, error!')
+    console.log('oh no, error!', error)
   }
 }
 
@@ -66,9 +66,18 @@ export const completeOrder = orderId => async dispatch => {
   }
 }
 
-export const createOrderItem = (userId, productId) => async dispatch => {
+export const createOrderItem = (
+  userId,
+  productId,
+  itemQty
+) => async dispatch => {
   try {
-    const {data} = await axios.post('/api/order_items', {userId, productId})
+    console.log('thunk item qty:', itemQty)
+    const {data} = await axios.post('/api/order_items', {
+      userId,
+      productId,
+      itemQty
+    })
     dispatch(newOrderItem(data))
   } catch (error) {
     console.log('oh no, error!', error)
