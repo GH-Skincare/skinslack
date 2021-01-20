@@ -16,7 +16,7 @@ const Navigationbar = ({handleClick, isLoggedIn}) => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/allproducts">All Products</Nav.Link>
+          <Link to="/allproducts">All Products</Link>
         </Nav>
         <Nav>
           <Link to="/cart" className="cart-link">

@@ -1,17 +1,34 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Button} from 'react-bootstrap'
-import {fetchActiveOrder, deleteOrderItem} from '../store/orders'
+import {
+  fetchActiveOrder,
+  deleteOrderItem,
+  deleteGuestOrderItem,
+  completeOrder,
+  completeGuestOrder
+} from '../store/orders'
 import {me} from '../store'
 
 class ActiveOrder extends React.Component {
   constructor(props) {
     super(props)
+    this.clickCheckOut = this.clickCheckOut.bind(this)
+  }
+
+  clickCheckOut(orderId) {
+    if (orderId) {
+      this.props.completeCheckOut(orderId)
+    } else {
+      this.props.completeGuestCheckOut(this.props.activeOrder)
+    }
   }
 
   async componentDidMount() {
     await this.props.loadInitialData()
-    await this.props.loadActiveOrder(this.props.userId)
+    if (this.props.isLoggedIn) {
+      await this.props.loadActiveOrder(this.props.userId)
+    }
   }
 
   render() {
@@ -19,7 +36,13 @@ class ActiveOrder extends React.Component {
       !this.props.activeOrder.orderItems ||
       this.props.activeOrder.orderItems.length === 0
     ) {
-      return <div> Cart Empty </div>
+      return (
+        <div className="note-to-cust-empty">
+          {' '}
+          Cart is currently empty. Please take a look at our products to find
+          something you love!{' '}
+        </div>
+      )
     }
 
     return (
@@ -42,10 +65,12 @@ class ActiveOrder extends React.Component {
                   <p className="product-price">
                     Quantity: {orderItem.quantity}
                   </p>
-                  <div>
+                  <div className="great-taste-note">
                     {' '}
                     Thanks for adding to your bag! You have Great taste!{' '}
                   </div>
+                  <br />
+                  <br />
                   <Button
                     className="add-cart"
                     type="submit"
@@ -62,6 +87,16 @@ class ActiveOrder extends React.Component {
                 </li>
               </div>
             ))}
+            <Button
+              className="add-cart"
+              type="submit"
+              onClick={() => {
+                this.clickCheckOut(this.props.activeOrder.id)
+                alert('THANK YOU FOR SHOPPING WITH US!')
+              }}
+            >
+              Checkout 🛍
+            </Button>
           </ul>
         </div>
       </div>
@@ -72,7 +107,8 @@ class ActiveOrder extends React.Component {
 const mapState = state => {
   return {
     activeOrder: state.orders.activeOrder,
-    userId: state.user.id
+    userId: state.user.id,
+    isLoggedIn: !!state.user.id
   }
 }
 
@@ -80,7 +116,9 @@ const mapDispatch = dispatch => {
   return {
     loadInitialData: () => dispatch(me()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
-    clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
+    clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId)),
+    completeCheckOut: orderId => dispatch(completeOrder(orderId)),
+    completeGuestCheckOut: order => dispatch(completeGuestOrder(order))
   }
 }
 

@@ -2,7 +2,15 @@ const router = require('express').Router()
 const {User} = require('../db/models')
 module.exports = router
 
-router.get('/', async (req, res, next) => {
+const isAllowed = (req, res, next) => {
+  if (req.user === undefined || String(req.user.id) !== req.params.userId) {
+    res.send(403)
+  } else {
+    next()
+  }
+}
+
+router.get('/', isAllowed, async (req, res, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and email fields - even though

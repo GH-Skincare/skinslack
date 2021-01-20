@@ -136,7 +136,11 @@ class adminView extends React.Component {
               <div className="all-products" key={product.id}>
                 <li className="product-stats">
                   <p className="product-name">{product.name}</p>
-                  <p className="product-price">{product.price}</p>
+                  {product.price.includes('$') ? (
+                    <p className="product-price">{product.price}</p>
+                  ) : (
+                    <p className="product-price">${product.price}</p>
+                  )}
                   <br />
                   <Button
                     className="add-cart"
