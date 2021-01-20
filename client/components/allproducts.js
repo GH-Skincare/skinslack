@@ -5,7 +5,9 @@ import {Button} from 'react-bootstrap'
 import {
   fetchActiveOrder,
   createOrderItem,
-  deleteOrderItem
+  deleteOrderItem,
+  createGuestOrderItem,
+  deleteGuestOrderItem
 } from '../store/orders'
 import {Link} from 'react-router-dom'
 import {me} from '../store'
@@ -14,12 +16,32 @@ import SelectNum from './SelectNum'
 class AllProducts extends React.Component {
   constructor(props) {
     super(props)
+    this.clickAddToBag = this.clickAddToBag.bind(this)
+    this.clickDeleteOrderItem = this.clickDeleteOrderItem.bind(this)
+  }
+
+  clickAddToBag(product, quantity) {
+    if (this.props.isLoggedIn) {
+      this.props.addToCart(this.props.userId, product.id, quantity)
+    } else {
+      this.props.addToGuestCart(product, quantity)
+    }
+  }
+
+  clickDeleteOrderItem(orderId) {
+    if (this.props.isLoggedIn) {
+      this.props.removeOrderItem(orderId)
+    } else {
+      this.props.removeGuestOrderItem(orderId)
+    }
   }
 
   async componentDidMount() {
     await this.props.loadInitialData()
     await this.props.loadProducts()
-    await this.props.loadActiveOrder(this.props.userId)
+    if (this.props.isLoggedIn) {
+      await this.props.loadActiveOrder(this.props.userId)
+    }
   }
 
   render() {
@@ -63,7 +85,7 @@ class AllProducts extends React.Component {
                             className="add-cart"
                             type="submit"
                             onClick={() =>
-                              this.props.clickDeleteOrderItem(orderItem.id)
+                              this.clickDeleteOrderItem(orderItem.id)
                             }
                           >
                             REMOVE 🛍
@@ -80,11 +102,7 @@ class AllProducts extends React.Component {
                           onClick={() => {
                             let itemQty = document.getElementById(product.id)
                               .value
-                            this.props.addToCart(
-                              this.props.userId,
-                              product.id,
-                              itemQty
-                            )
+                            this.clickAddToBag(product, itemQty)
                           }}
                         >
                           Add to Bag 🛍
@@ -110,7 +128,8 @@ const mapState = state => {
   return {
     products: state.products,
     activeOrder: state.orders.activeOrder,
-    userId: state.user.id
+    userId: state.user.id,
+    isLoggedIn: !!state.user.id
   }
 }
 
@@ -121,7 +140,11 @@ const mapDispatch = dispatch => {
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
     addToCart: (userId, productId, itemQty) =>
       dispatch(createOrderItem(userId, productId, itemQty)),
-    clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
+    addToGuestCart: (product, quantity) =>
+      dispatch(createGuestOrderItem(product, quantity)),
+    removeOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId)),
+    removeGuestOrderItem: orderItemId =>
+      dispatch(deleteGuestOrderItem(orderItemId))
   }
 }
 
