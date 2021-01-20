@@ -78,7 +78,6 @@ class adminView extends React.Component {
                 name="summary"
                 placeholder="Summary"
                 onChange={this.handleChange}
-                value={this.state.value}
               />
             </Form.Group>
           </Form.Row>
@@ -91,7 +90,6 @@ class adminView extends React.Component {
                 name="description"
                 placeholder="Description"
                 onChange={this.handleChange}
-                value={this.state.value}
               />
             </Form.Group>
             <Form.Group as={Col}>
@@ -101,7 +99,6 @@ class adminView extends React.Component {
                 name="price"
                 placeholder="Price"
                 onChange={this.handleChange}
-                value={this.state.value}
               />
             </Form.Group>
           </Form.Row>
@@ -113,7 +110,6 @@ class adminView extends React.Component {
                 name="imageUrl"
                 placeholder="Image Url"
                 onChange={this.handleChange}
-                value={this.state.value}
               />
             </Form.Group>
             <Form.Group as={Col}>
@@ -123,7 +119,6 @@ class adminView extends React.Component {
                 name="inventory"
                 placeholder="How many of this product?"
                 onChange={this.handleChange}
-                value={this.state.value}
               />
             </Form.Group>
             <Button

@@ -7,16 +7,19 @@ import {
   createOrderItem,
   deleteOrderItem
 } from '../store/orders'
-import Counter from './Counter'
+import {Link} from 'react-router-dom'
+import {me} from '../store'
+import SelectNum from './SelectNum'
 
 class AllProducts extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.loadProducts()
-    this.props.loadActiveOrder(this.props.userId)
+  async componentDidMount() {
+    await this.props.loadInitialData()
+    await this.props.loadProducts()
+    await this.props.loadActiveOrder(this.props.userId)
   }
 
   render() {
@@ -44,7 +47,9 @@ class AllProducts extends React.Component {
               return (
                 <div className="all-products" key={product.id}>
                   <li className="product-stats">
-                    <p className="product-name">{product.name}</p>
+                    <Link to={`/singleproduct/${product.id}`}>
+                      <p className="product-name">{product.name}</p>
+                    </Link>
                     <img
                       src={product.imageUrl}
                       style={{width: '25%', margin: '20px 0'}}
@@ -53,9 +58,7 @@ class AllProducts extends React.Component {
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
                       <div>
-                        {/* <div>Quantity: {orderItem.quantity}</div> */}
                         <div className="add-remove-products">
-                          <Counter component={Counter} />
                           <Button
                             className="add-cart"
                             type="submit"
@@ -68,15 +71,25 @@ class AllProducts extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <Button
-                        className="add-cart"
-                        type="submit"
-                        onClick={() =>
-                          this.props.addToCart(this.props.userId, product.id)
-                        }
-                      >
-                        Add to Bag 🛍
-                      </Button>
+                      <div>
+                        <SelectNum id={product.id} component={SelectNum} />
+                        <br />
+                        <Button
+                          className="add-cart"
+                          type="submit"
+                          onClick={() => {
+                            let itemQty = document.getElementById(product.id)
+                              .value
+                            this.props.addToCart(
+                              this.props.userId,
+                              product.id,
+                              itemQty
+                            )
+                          }}
+                        >
+                          Add to Bag 🛍
+                        </Button>
+                      </div>
                     )}
                     <br />
                     <p>
@@ -103,10 +116,11 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
+    loadInitialData: () => dispatch(me()),
     loadProducts: () => dispatch(fetchProducts()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
-    addToCart: (userId, productId) =>
-      dispatch(createOrderItem(userId, productId)),
+    addToCart: (userId, productId, itemQty) =>
+      dispatch(createOrderItem(userId, productId, itemQty)),
     clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
   }
 }
