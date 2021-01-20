@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, createOrderItem} from '../store/orders'
-import Counter from '../components/Counter'
+import SelectNum from '../components/SelectNum'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
@@ -29,13 +29,15 @@ export class SingleProduct extends React.Component {
             />
             <p>{product.description}</p>
             <div className="add-remove-products">
-              <Counter component={Counter} />
+              <SelectNum id={product.id} component={SelectNum} />
+              <br />
               <Button
                 className="add-cart"
                 type="submit"
-                onClick={() =>
-                  this.props.addToCart(this.props.userId, product.id)
-                }
+                onClick={() => {
+                  let itemQty = document.getElementById(product.id).value
+                  this.props.addToCart(this.props.userId, product.id, itemQty)
+                }}
               >
                 Add to Bag 🛍
               </Button>
@@ -61,7 +63,8 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
   loadSingleProduct: id => dispatch(fetchSingleProduct(id)),
   loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
-  addToCart: (userId, productId) => dispatch(createOrderItem(userId, productId))
+  addToCart: (userId, productId, itemQty) =>
+    dispatch(createOrderItem(userId, productId, itemQty))
 })
 
 export default connect(mapState, mapDispatch)(SingleProduct)

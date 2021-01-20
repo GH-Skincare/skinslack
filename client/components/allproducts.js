@@ -58,7 +58,6 @@ class AllProducts extends React.Component {
                     <p className="product-price">{product.price}</p>
                     {orderItem !== null ? (
                       <div>
-                        {/* <div>Quantity: {orderItem.quantity}</div> */}
                         <div className="add-remove-products">
                           <Button
                             className="add-cart"
@@ -73,14 +72,20 @@ class AllProducts extends React.Component {
                       </div>
                     ) : (
                       <div>
-                        <SelectNum component={SelectNum} />
+                        <SelectNum id={product.id} component={SelectNum} />
                         <br />
                         <Button
                           className="add-cart"
                           type="submit"
-                          onClick={() =>
-                            this.props.addToCart(this.props.userId, product.id)
-                          }
+                          onClick={() => {
+                            let itemQty = document.getElementById(product.id)
+                              .value
+                            this.props.addToCart(
+                              this.props.userId,
+                              product.id,
+                              itemQty
+                            )
+                          }}
                         >
                           Add to Bag 🛍
                         </Button>
@@ -114,8 +119,8 @@ const mapDispatch = dispatch => {
     loadInitialData: () => dispatch(me()),
     loadProducts: () => dispatch(fetchProducts()),
     loadActiveOrder: userId => dispatch(fetchActiveOrder(userId)),
-    addToCart: (userId, productId) =>
-      dispatch(createOrderItem(userId, productId)),
+    addToCart: (userId, productId, itemQty) =>
+      dispatch(createOrderItem(userId, productId, itemQty)),
     clickDeleteOrderItem: orderItemId => dispatch(deleteOrderItem(orderItemId))
   }
 }
