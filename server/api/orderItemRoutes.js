@@ -38,7 +38,7 @@ orderItemsRouter.post('/', async function(req, res, next) {
     const orderItem = await OrderItem.create({
       orderId: order.id,
       productId: req.body.productId,
-      quantity: 1
+      quantity: req.body.itemQty
     })
 
     const orderItemWithProduct = await OrderItem.findByPk(orderItem.id, {
