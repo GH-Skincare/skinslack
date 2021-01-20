@@ -8,10 +8,14 @@ export default function counter(state = initialState, action) {
       return {
         count: state.count + 1
       }
-    case 'DECREMENT':
+    case 'DECREMENT': {
+      if (state.count - 1 < 0) {
+        return {count: 0}
+      }
       return {
         count: state.count - 1
       }
+    }
     default:
       return state
   }
