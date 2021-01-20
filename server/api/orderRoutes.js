@@ -50,4 +50,22 @@ orderRouter.put('/:orderId', async function(req, res, next) {
   }
 })
 
+orderRouter.post('/', async function(req, res, next) {
+  try {
+    let orderObject = req.body
+    let order = await Order.create(orderObject)
+    for (let i = 0; i < orderObject.orderItems.length; i++) {
+      let orderItem = orderObject.orderItems[i]
+      await OrderItem.create({
+        productId: orderItem.productId,
+        orderId: order.id,
+        quantity: orderItem.quantity
+      })
+    }
+    res.send(200)
+  } catch (err) {
+    next(err)
+  }
+})
+
 module.exports = orderRouter

@@ -39,6 +39,10 @@ export const deleteOrderItem = orderItemId => async dispatch => {
   }
 }
 
+export const deleteGuestOrderItem = orderItemId => dispatch => {
+  dispatch(removeOrderItem(orderItemId))
+}
+
 export const fetchActiveOrder = userId => async dispatch => {
   try {
     const {data} = await axios.get(`/api/orders/users/${userId}/type/active`)
@@ -66,6 +70,15 @@ export const completeOrder = orderId => async dispatch => {
   }
 }
 
+export const completeGuestOrder = order => async dispatch => {
+  try {
+    await axios.post('/api/orders/', {...order, isActive: false})
+    dispatch(updateOrder())
+  } catch (error) {
+    console.log('oh no, error!')
+  }
+}
+
 export const createOrderItem = (
   userId,
   productId,
@@ -82,6 +95,21 @@ export const createOrderItem = (
   } catch (error) {
     console.log('oh no, error!', error)
   }
+}
+
+export const createGuestOrderItem = (product, itemQty) => dispatch => {
+  let order = {
+    orderItems: [
+      {
+        id: product.id,
+        productId: product.id,
+        product: product,
+        quantity: itemQty
+      }
+    ]
+  }
+
+  dispatch(newOrderItem(order))
 }
 
 const initialState = {
@@ -102,7 +130,7 @@ export const ordersReducer = (state = initialState, action) => {
     case UPDATE_ORDER:
       return {
         activeOrder: {},
-        inactiveOrders: [...state.inactiveOrders, state.activeOrder]
+        inactiveOrders: [...state.inactiveOrders, state.activeOrder] //order history
       }
     case REMOVE_ORDER_ITEM:
       return {
