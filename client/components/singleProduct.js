@@ -21,11 +21,14 @@ export class SingleProduct extends React.Component {
 
     return (
       <div>
+        <center>
+          <Link to="/allproducts">
+            <p>Back to All Products</p>
+          </Link>
+        </center>
         <div className="singleproducts-container">
           <center>
-            <Link to="/allproducts">
-              <h3 className="product-name">{product.name}</h3>
-            </Link>
+            <h3 className="product-name">{product.name}</h3>
             <p>{product.price}</p>
             <img
               src={product.imageUrl}
