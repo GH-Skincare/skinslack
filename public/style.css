@@ -139,9 +139,11 @@ form div {
 /* specific styling for each product category */
 
 .product-name {
+  cursor: pointer;
   font-size: 32px;
   font-weight: bold;
-  color: #addfad;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .product-summary {
