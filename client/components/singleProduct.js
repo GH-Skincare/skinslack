@@ -4,6 +4,7 @@ import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, createOrderItem} from '../store/orders'
 import SelectNum from '../components/SelectNum'
+import {Link} from 'react-router-dom'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
@@ -21,8 +22,16 @@ export class SingleProduct extends React.Component {
       <div>
         <div className="singleproducts-container">
           <center>
-            <h3>{product.name}</h3>
-            <p>{product.price}</p>
+            <Link to="/allproducts">
+              <h3>{product.name}</h3>
+            </Link>
+            {typeof product.price !== 'string' ? null : product.price.includes(
+              '$'
+            ) ? (
+              <p className="product-price">{product.price}</p>
+            ) : (
+              <p className="product-price">${product.price}</p>
+            )}
             <img
               src={product.imageUrl}
               style={{width: '25%', margin: '20px 0'}}

@@ -10,18 +10,31 @@ import React from 'react'
 import {fetchProducts} from '../store/products'
 import {connect} from 'react-redux'
 import {Button, Form, Col} from 'react-bootstrap'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'
-import {removeProduct} from '../store/products'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import {
+  createProduct,
+  removeProduct,
+  updateSingleProduct
+} from '../store/adminview'
 
 class adminView extends React.Component {
   constructor(props) {
     super(props)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      name: '',
+      summary: '',
+      description: '',
+      imageUrl: '',
+      price: 0,
+      inventory: 0
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  async componentDidMount() {
-    await this.props.loadProducts()
+  componentDidMount() {
+    this.props.loadProducts()
     // this.props.updateProductInfo()
   }
   // handleSubmit(e) {
@@ -31,51 +44,87 @@ class adminView extends React.Component {
   //   this.props.addToProducts({ product: this.product })
   // }
 
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+    console.log(this.state, `THIS IS THE STATE`)
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.addToProducts(this.state)
+  }
+
   render() {
     return (
       <div>
         <h1 className="admin-view-headline">Admin View</h1>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Row>
             <Form.Group as={Col}>
               <Form.Label>Product Name</Form.Label>
-              <Form.Control type="text" placeholder="Product Name" />
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Product Name"
+                onChange={this.handleChange}
+              />
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Product Summary</Form.Label>
-              <Form.Control type="text" placeholder="Summary" />
+              <Form.Control
+                type="text"
+                name="summary"
+                placeholder="Summary"
+                onChange={this.handleChange}
+              />
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
             <Form.Group as={Col}>
               <Form.Label>Product Description</Form.Label>
-              <Form.Control type="text" placeholder="Description" />
+              <Form.Control
+                type="text"
+                name="description"
+                placeholder="Description"
+                onChange={this.handleChange}
+              />
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Price</Form.Label>
-              <Form.Control type="integer" placeholder="Price" />
+              <Form.Control
+                type="integer"
+                name="price"
+                placeholder="Price"
+                onChange={this.handleChange}
+              />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col}>
               <Form.Label>Image Url</Form.Label>
-              <Form.Control type="text" placeholder="Image Url" />
+              <Form.Control
+                type="text"
+                name="imageUrl"
+                placeholder="Image Url"
+                onChange={this.handleChange}
+              />
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Inventory to Add</Form.Label>
               <Form.Control
                 type="integer"
+                name="inventory"
                 placeholder="How many of this product?"
+                onChange={this.handleChange}
               />
             </Form.Group>
             <Button
               className="create-product"
               variant="secondary"
               type="submit"
-              onClick={() => {
-                this.props.addToProducts(this.props.product)
-              }}
             >
               Add Product
             </Button>
@@ -87,15 +136,12 @@ class adminView extends React.Component {
               <div className="all-products" key={product.id}>
                 <li className="product-stats">
                   <p className="product-name">{product.name}</p>
-                  <p className="product-price">{product.price}</p>
+                  {product.price.includes('$') ? (
+                    <p className="product-price">{product.price}</p>
+                  ) : (
+                    <p className="product-price">${product.price}</p>
+                  )}
                   <br />
-                  <Button
-                    className="add-cart"
-                    type="submit"
-                    onClick={() => this.props.clickDeleteProduct(product.id)}
-                  >
-                    REMOVE 🛍
-                  </Button>
                 </li>
               </div>
             ))}
@@ -108,18 +154,21 @@ class adminView extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.products,
-    product: state.product
+    products: state.products
+    // product: state.product
   }
 }
 
 const mapDispatch = dispatch => {
   return {
     loadProducts: () => dispatch(fetchProducts()),
-    clickDeleteProduct: productId => dispatch(removeProduct(productId))
-    // addToProducts: (product) => dispatch(createProduct(product)),
+    addToProducts: product => dispatch(createProduct(product))
     // updateProductInfo: (id, product) => dispatch(updateSingleProduct(id, product))
   }
 }
 
 export default connect(mapState, mapDispatch)(adminView)
+
+// //              onClick={() => {
+//   this.props.addToProducts(this.props.product)
+// }}
