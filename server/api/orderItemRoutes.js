@@ -35,11 +35,48 @@ orderItemsRouter.post('/', async function(req, res, next) {
     })
     const order = orders[0]
 
-    const orderItem = await OrderItem.create({
-      orderId: order.id,
-      productId: req.body.productId,
-      quantity: req.body.itemQty
+    //do an item look-up to see if item is already in the active order (cart)
+    let itemLookUp = await OrderItem.findAll({
+      where: {
+        productId: req.body.productId
+      }
     })
+
+    //if the item is not in the cart, item look up result is undefined, else retrieve the searched item
+    itemLookUp = itemLookUp === undefined ? undefined : itemLookUp[0]
+
+    //if item look up equals undefined, create a new active order record with the item quantity
+    let orderItem
+    if (itemLookUp === undefined) {
+      orderItem = await OrderItem.create({
+        orderId: order.id,
+        productId: req.body.productId,
+        quantity: req.body.itemQty
+      })
+
+      //else if item look up matches an item in the cart, update the item quantity so that it is the previous quantity plus the new (this avoids the error of having 2 of the same items in the cart displayed rather than 1 item with the total updated quantity)
+    } else {
+      await OrderItem.update(
+        {
+          quantity:
+            parseInt(req.body.itemQty, 10) + parseInt(itemLookUp.quantity, 10)
+        },
+        {
+          where: {
+            orderId: order.id,
+            productId: req.body.productId
+          }
+        }
+      )
+      //returns an array with one object because of find all[0]
+
+      orderItem = await OrderItem.findAll({
+        where: {
+          productId: req.body.productId
+        }
+      })
+      orderItem = orderItem[0]
+    }
 
     const orderItemWithProduct = await OrderItem.findByPk(orderItem.id, {
       include: Product
