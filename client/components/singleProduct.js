@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, createOrderItem} from '../store/orders'
+import Counter from '../components/Counter'
 import SelectNum from '../components/SelectNum'
 import {Link} from 'react-router-dom'
 
@@ -18,8 +19,14 @@ export class SingleProduct extends React.Component {
 
   render() {
     const product = this.props.product || {}
+
     return (
       <div>
+        <center>
+          <Link to="/allproducts">
+            <p>Back to All Products</p>
+          </Link>
+        </center>
         <div className="singleproducts-container">
           <center>
             <Link to="/allproducts">
@@ -38,13 +45,13 @@ export class SingleProduct extends React.Component {
             />
             <p>{product.description}</p>
             <div className="add-remove-products">
-              <SelectNum id={product.id} component={SelectNum} />
               <br />
+              <Counter id={product.id} component={Counter} />
               <Button
                 className="add-cart"
                 type="submit"
                 onClick={() => {
-                  let itemQty = document.getElementById(product.id).value
+                  let itemQty = document.getElementById(product.id).innerHTML
                   this.props.addToCart(this.props.userId, product.id, itemQty)
                 }}
               >

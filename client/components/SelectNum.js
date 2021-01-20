@@ -28,18 +28,4 @@ class SelectNum extends React.Component {
   }
 }
 
-// const mapState = state => {
-//   return {
-
-//   }
-// }
-
-// const mapDispatch = dispatch => {
-//   return {
-
-//   }
-// }
-
-// export default connect(mapState, mapDispatch)(SelectNum)
-
 export default SelectNum
