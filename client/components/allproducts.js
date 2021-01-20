@@ -80,7 +80,6 @@ class AllProducts extends React.Component {
                           onClick={() => {
                             let itemQty = document.getElementById(product.id)
                               .value
-                            console.log('QTY:', itemQty)
                             this.props.addToCart(
                               this.props.userId,
                               product.id,
