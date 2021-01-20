@@ -29,8 +29,6 @@ export class SingleProduct extends React.Component {
         </center>
         <div className="singleproducts-container">
           <center>
-            <h3 className="product-name">{product.name}</h3>
-            <p>{product.price}</p>
             <Link to="/allproducts">
               <h3>{product.name}</h3>
             </Link>
