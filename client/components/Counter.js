@@ -25,7 +25,7 @@ class Counter extends React.Component {
           >
             -
           </Button>
-          <span className="count-num">{this.props.count}</span>
+          <span id={this.props.id}>{this.props.count}</span>
           <Button
             className="counter-buttons"
             variant="outline-info"

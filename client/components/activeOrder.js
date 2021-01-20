@@ -19,7 +19,13 @@ class ActiveOrder extends React.Component {
       !this.props.activeOrder.orderItems ||
       this.props.activeOrder.orderItems.length === 0
     ) {
-      return <div> Cart Empty </div>
+      return (
+        <div>
+          {' '}
+          Cart is currently empty. Please take a look at our products to find
+          something you love!{' '}
+        </div>
+      )
     }
 
     return (

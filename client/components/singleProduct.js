@@ -4,6 +4,7 @@ import {fetchSingleProduct} from '../store/singleProduct'
 import {Button} from 'react-bootstrap'
 import {fetchActiveOrder, createOrderItem} from '../store/orders'
 import SelectNum from '../components/SelectNum'
+import Counter from '../components/Counter'
 
 export class SingleProduct extends React.Component {
   async componentDidMount() {
@@ -17,6 +18,7 @@ export class SingleProduct extends React.Component {
 
   render() {
     const product = this.props.product || {}
+
     return (
       <div>
         <div className="singleproducts-container">
@@ -29,13 +31,13 @@ export class SingleProduct extends React.Component {
             />
             <p>{product.description}</p>
             <div className="add-remove-products">
-              <SelectNum id={product.id} component={SelectNum} />
               <br />
+              <Counter id={product.id} component={Counter} />
               <Button
                 className="add-cart"
                 type="submit"
                 onClick={() => {
-                  let itemQty = document.getElementById(product.id).value
+                  let itemQty = document.getElementById(product.id).innerHTML
                   this.props.addToCart(this.props.userId, product.id, itemQty)
                 }}
               >
