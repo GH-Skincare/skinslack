@@ -4,18 +4,19 @@ const productData = [
     name: 'Wildest Dreams Mask',
     summary: 'Your skin will feel new, almost like in your wildest dreams!',
     description:
-      'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-    imageUrl: 'https://miro.medium.com/max/1400/1*8C40nF4NTgSYNZOAzpOi-g.jpeg',
+      'Taylor Swift inspired face mask that will leave you feeling like a champ!',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$24.99',
     inventory: 1
   },
   {
     id: 2,
-    name: 'Lina Lip Balm',
+    name: "Lina's Lemon Lip Balm",
     summary: 'Lip care is part of Skincare!',
-    description:
-      'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.',
-    imageUrl: 'http://dummyimage.com/197x249.png/dddddd/000000',
+    description: 'Lip Balm that also has sunscreen and tastes like lemon!',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$12.99',
     inventory: 2
   },
@@ -24,8 +25,9 @@ const productData = [
     name: 'JJ Cream',
     summary: 'Moisturize all day, every day!',
     description:
-      'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
-    imageUrl: 'http://dummyimage.com/197x249.png/dddddd/000000',
+      'Moisturizing your skin is key! Especially if you spend a lot of time outdoors!',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$7.58',
     inventory: 3
   },
@@ -34,8 +36,9 @@ const productData = [
     name: 'Ivy Mask',
     summary: 'Face mask with scents of lemon and lime.',
     description:
-      'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.',
-    imageUrl: 'http://dummyimage.com/141x104.jpg/ff4444/ffffff',
+      'This mask has been made with the finest blends of lemon and lime. Perfect start to your day.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$8.58',
     inventory: 4
   },
@@ -44,8 +47,9 @@ const productData = [
     name: 'React Retinol',
     summary: 'Eye cream for that hustle!',
     description:
-      'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.',
-    imageUrl: 'http://dummyimage.com/208x153.jpg/ff4444/ffffff',
+      'Spending a lot of time in front of a computer screen? Your eyes will thank you with this rejuvinating React Retinol eye cream.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$28.99',
     inventory: 5
   },
@@ -54,8 +58,9 @@ const productData = [
     name: 'Node Pore Cleanser',
     summary: 'Makeup remover that also moisturizes!',
     description:
-      'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
-    imageUrl: 'http://dummyimage.com/101x180.bmp/5fa2dd/ffffff',
+      'Pores are part of every day life, just like Node is part of JS. This face cleanser will keep your skin under control.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$7.99',
     inventory: 6
   },
@@ -64,8 +69,9 @@ const productData = [
     name: 'Botanical Betsy',
     summary: 'Face mist that works with or without makeup!',
     description:
-      'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
-    imageUrl: 'http://dummyimage.com/178x240.bmp/dddddd/000000',
+      'If setting sprays could talk, this one would say, you are one in a million.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$11.50',
     inventory: 7
   },
@@ -74,8 +80,9 @@ const productData = [
     name: "Sydney's Sculpting Cream",
     summary: 'Redux the stress, regenerate the cells.',
     description:
-      'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
-    imageUrl: 'http://dummyimage.com/160x169.bmp/dddddd/000000',
+      'Your face is already perfectly sculpted, try this cream to stay at your best.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$7.06',
     inventory: 8
   },
@@ -84,40 +91,43 @@ const productData = [
     name: "Mary's Mint Mask",
     summary: 'Mint mask leaving your skin minty fresh!',
     description:
-      'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
-    imageUrl: 'http://dummyimage.com/234x145.bmp/dddddd/000000',
+      'Minty fresh! This mask will wake you up or get your ready for bed with its lovely scent.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$6.72',
     inventory: 9
   },
   {
     id: 10,
-    name: 'Sports',
-    summary:
-      'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    name: 'Express Eye Cream',
+    summary: 'Great for puffy eyes in the morning.',
     description:
-      'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.',
-    imageUrl: 'http://dummyimage.com/136x175.png/cc0000/ffffff',
+      'This express eye cream will quickly depuff your eyes to make sure you feel your best.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
     price: '$6.72',
     inventory: 10
   },
   {
     id: 11,
-    name: 'Shoes',
-    summary: 'Nulla ac enim. Duis bibendum.',
-    description:
-      'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
-    imageUrl: 'http://dummyimage.com/213x139.jpg/cc0000/ffffff',
-    price: '$5.45',
+    name: 'Grace Hopper Aloe Gel',
+    summary: 'Aloe gel to moisturize after too much fun in the sun!',
+    description: '90% Aloe Vera, rated the best 6 years in a row!',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
+    price: '$7.45',
     inventory: 11
   },
   {
     id: 12,
-    name: 'Toys',
-    summary: 'Cras pellentesque volutpat dui.',
+    name: 'Fullstack Collection',
+    summary:
+      'Full stack of our leading products in our moisturizing collection!',
     description:
-      'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.',
-    imageUrl: 'http://dummyimage.com/216x160.bmp/dddddd/000000',
-    price: '$2.31',
+      'Pick 4 of your favorite products and create your own fullstack skincare approach.',
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flibrary.essentialwholesale.com%2Fwp-content%2Fuploads%2F2018%2F06%2FSkincare-Packaging-Basics-Choosing-The-Right-Material-For-Your-Product-BLOG.jpg&f=1&nofb=1',
+    price: '$25.31',
     inventory: 12
   },
   {
