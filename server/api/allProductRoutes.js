@@ -12,27 +12,15 @@ allProductsRouter.get('/', async (req, res, next) => {
 
 allProductsRouter.post('/', async (req, res, next) => {
   try {
-    const newProduct = await Product.create(req.body)
-    res.json(newProduct)
-  } catch (err) {
-    next(err)
-  }
-})
-
-allProductsRouter.put('/:productId', async (req, res, next) => {
-  try {
-    const {productId} = req.params
-    let products = []
-    if (req.body.products !== null) {
-      products = req.body.products
-    }
-
-    await Product.update(req.body, {
-      where: {
-        id: productId
-      }
+    const newProduct = await Product.create({
+      name: req.body.name,
+      summary: req.body.summary,
+      description: req.body.description,
+      price: req.body.price,
+      imageUrl: req.body.imageUrl,
+      inventory: req.body.inventory
     })
-    res.sendStatus(204)
+    res.json(newProduct)
   } catch (err) {
     next(err)
   }

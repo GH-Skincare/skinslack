@@ -9,6 +9,7 @@ import {
   completeGuestOrder
 } from '../store/orders'
 import {me} from '../store'
+import {Link} from 'react-router-dom'
 
 class ActiveOrder extends React.Component {
   constructor(props) {
@@ -49,14 +50,16 @@ class ActiveOrder extends React.Component {
       <div>
         <h1 className="shop-all-products-headline">
           {' '}
-          Your fabolous Shopping Cart
+          Your <i>fabulous</i> Shopping Cart
         </h1>
         <div className="all-products-list-container">
           <ul>
             {this.props.activeOrder.orderItems.map(orderItem => (
               <div className="all-products" key={orderItem.id}>
                 <li className="product-stats">
-                  <p className="product-name">{orderItem.product.name}</p>
+                  <Link to={`/singleproduct/${orderItem.product.id}`}>
+                    <p className="product-name">{orderItem.product.name}</p>
+                  </Link>
                   <img
                     src={orderItem.product.imageUrl}
                     style={{width: '25%', margin: '20px 0'}}

@@ -12,11 +12,8 @@ import {connect} from 'react-redux'
 import {Button, Form, Col} from 'react-bootstrap'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
-import {
-  createProduct,
-  removeProduct,
-  updateSingleProduct
-} from '../store/adminview'
+import {createProduct, removeProduct} from '../store/adminview'
+import {Link} from 'react-router-dom'
 
 class adminView extends React.Component {
   constructor(props) {
@@ -33,8 +30,8 @@ class adminView extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  componentDidMount() {
-    this.props.loadProducts()
+  async componentDidMount() {
+    await this.props.loadProducts()
   }
 
   handleChange(e) {
@@ -133,7 +130,14 @@ class adminView extends React.Component {
                   ) : (
                     <p className="product-price">${product.price}</p>
                   )}
+                  <p className="product-inventory">
+                    Inventory: {product.inventory}
+                  </p>
                   <br />
+                  <Button className="add-cart" type="submit">
+                    <Link to={`/admin/${product.id}`}>EDIT 🛍</Link>
+                  </Button>
+                  |
                   <Button
                     className="add-cart"
                     type="submit"
@@ -153,7 +157,8 @@ class adminView extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.products
+    products: state.products,
+    product: state.product
   }
 }
 
@@ -162,7 +167,6 @@ const mapDispatch = dispatch => {
     loadProducts: () => dispatch(fetchProducts()),
     addToProducts: product => dispatch(createProduct(product)),
     clickDeleteProduct: productId => dispatch(removeProduct(productId))
-    // updateProductInfo: (id, product) => dispatch(updateSingleProduct(id, product))
   }
 }
 
