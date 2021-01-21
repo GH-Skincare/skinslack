@@ -1,4 +1,6 @@
 import axios from 'axios'
+import {setProducts} from './products'
+import {setProduct} from './singleProduct'
 
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
@@ -69,6 +71,7 @@ export default function adminReducer(state = initialState, action) {
       return [...state, action.product]
     case DELETE_PRODUCT:
       return state.filter(product => {
+        console.log(product, `i'm in the reducer)`)
         return product.id !== action.productId
       })
     default:
