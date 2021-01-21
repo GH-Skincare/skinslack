@@ -16,7 +16,7 @@ class ActiveOrder extends React.Component {
     super(props)
     this.clickCheckOut = this.clickCheckOut.bind(this)
   }
-
+  //helper function
   clickCheckOut(orderId) {
     if (orderId) {
       this.props.completeCheckOut(orderId)
