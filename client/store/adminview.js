@@ -48,7 +48,7 @@ export const updateSingleProduct = (id, product) => async dispatch => {
     dispatch(updateProduct(product))
 
     const {data} = await axios.get(`/api/singleproduct/${id}`)
-    dispatch(setProduct(data))
+    dispatch(setProducts(data))
   } catch (error) {
     console.log(`Error updating product`)
   }
@@ -62,12 +62,12 @@ const initialState = {
 export default function adminReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_PRODUCT:
-      return {...state, ...action.productId}
+      return {...state, ...action.id}
     case ADD_PRODUCT:
       return [...state, action.product]
     case DELETE_PRODUCT:
       return state.filter(product => {
-        return product.id !== action.productId
+        return product.id !== action.id
       })
     default:
       return state
