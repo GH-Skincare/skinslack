@@ -35,20 +35,12 @@ class adminView extends React.Component {
 
   componentDidMount() {
     this.props.loadProducts()
-    // this.props.updateProductInfo()
   }
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  //   const product = e.target.id
-  //   console.log(product, `<---- adminviewproduct`)
-  //   this.props.addToProducts({ product: this.product })
-  // }
 
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     })
-    console.log(this.state, `THIS IS THE STATE`)
   }
 
   handleSubmit(e) {
@@ -142,6 +134,13 @@ class adminView extends React.Component {
                     <p className="product-price">${product.price}</p>
                   )}
                   <br />
+                  <Button
+                    className="add-cart"
+                    type="submit"
+                    onClick={() => this.props.clickDeleteProduct(product.id)}
+                  >
+                    REMOVE 🛍
+                  </Button>
                 </li>
               </div>
             ))}
@@ -155,20 +154,16 @@ class adminView extends React.Component {
 const mapState = state => {
   return {
     products: state.products
-    // product: state.product
   }
 }
 
 const mapDispatch = dispatch => {
   return {
     loadProducts: () => dispatch(fetchProducts()),
-    addToProducts: product => dispatch(createProduct(product))
+    addToProducts: product => dispatch(createProduct(product)),
+    clickDeleteProduct: productId => dispatch(removeProduct(productId))
     // updateProductInfo: (id, product) => dispatch(updateSingleProduct(id, product))
   }
 }
 
 export default connect(mapState, mapDispatch)(adminView)
-
-// //              onClick={() => {
-//   this.props.addToProducts(this.props.product)
-// }}
