@@ -153,8 +153,7 @@ class adminView extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.products,
-    product: state.product
+    products: state.products
   }
 }
 
