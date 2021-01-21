@@ -12,6 +12,25 @@ singleProductRouter.get('/:productId', async (req, res, next) => {
   }
 })
 
+singleProductRouter.put('/:productId', async (req, res, next) => {
+  try {
+    const {productId} = req.params
+    // let products = []
+    // if (req.body.products !== null) {
+    //   products = req.body.products
+    // }
+
+    await Product.update(req.body, {
+      where: {
+        id: productId
+      }
+    })
+    res.sendStatus(204)
+  } catch (err) {
+    next(err)
+  }
+})
+
 module.exports = singleProductRouter
 
 //, { include: ['name', 'description', 'imageUrl', 'price']

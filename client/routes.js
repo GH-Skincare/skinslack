@@ -8,6 +8,7 @@ import AllProducts from './components/AllProducts'
 import SingleProduct from './components/singleProduct'
 import ActiveOrder from './components/activeOrder'
 import AdminView from './components/adminView'
+import AdminEdit from './components/AdminEdit'
 
 /**
  * COMPONENT
@@ -37,6 +38,7 @@ class Routes extends Component {
             />
             <Route exact path="/cart" component={ActiveOrder} />
             <Route exact path="/admin" component={AdminView} />
+            <Route exact path="/admin/:productId" component={AdminEdit} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

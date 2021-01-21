@@ -25,7 +25,7 @@ export const createProduct = product => async dispatch => {
   try {
     await axios.post('/api/allproducts', product)
     const {data} = await axios.get('/api/allproducts')
-    dispatch(addProduct(data))
+    dispatch(setProducts(data))
   } catch (error) {
     console.log(`Ran into an error creating products :()`)
   }
@@ -42,17 +42,15 @@ export const removeProduct = id => async dispatch => {
   }
 }
 
-export const updateSingleProduct = (id, product) => {
-  return async dispatch => {
-    try {
-      await axios.put(`/api/singleproduct/${id}`, product)
-      dispatch(updateProduct(product))
+export const updateSingleProduct = (id, product) => async dispatch => {
+  try {
+    await axios.put(`/api/singleproduct/${id}`, product)
+    dispatch(updateProduct(product))
 
-      const {data} = axios.get(`/api/singleproduct/${id}`)
-      dispatch(setProduct(data))
-    } catch (error) {
-      console.log(`Error updating product`)
-    }
+    const {data} = await axios.get(`/api/singleproduct/${id}`)
+    dispatch(setProduct(data))
+  } catch (error) {
+    console.log(`Error updating product`)
   }
 }
 
@@ -63,15 +61,12 @@ const initialState = {
 
 export default function adminReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_PRODUCT:
-      return {...state, product: action.productId}
     case UPDATE_PRODUCT:
-      return {...state, product: action.productId}
+      return {...state, ...action.productId}
     case ADD_PRODUCT:
       return [...state, action.product]
     case DELETE_PRODUCT:
       return state.filter(product => {
-        console.log(product, `i'm in the reducer)`)
         return product.id !== action.productId
       })
     default:
